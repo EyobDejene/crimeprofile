@@ -1,0 +1,204 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Risk Profile</title>
+
+
+  <!-- bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap-grid.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+  <!-- style -->
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <!-- load jquery for kairos -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- load face api -->
+  <script defer src="js/face-api.min.js"></script>
+  <!-- load kairos api -->
+  <script src="js/kairos.js"></script>
+
+</head>
+
+
+<body data-barba="wrapper">
+
+  <main data-barba="container" data-barba-namespace="analyzer" data-title="Intro">
+
+    <div class="container">
+      <header class="pb-3">
+        <!-- start row -->
+        <div class="row ">
+          <div class="col-12">
+            <nav>
+              <ul class="navigation">
+                <li><a href="">>_Catch your <br> Risk profile</a></li>
+                <li><a href="">>_Data usage</a></li>
+                <li><a href="">>_About</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- end row -->
+      </header>
+    </div>
+
+
+
+
+    <article class="analyzer page">
+      <section class="analyzer_section">
+        <!-- start container -->
+        <div class="container d-flex justify-content-center align-self-center">
+
+          <!-- start row -->
+          <div class="row ">
+
+            <!-- start column 1 -->
+            <div class="col-4">
+
+              <fieldset class="box-border">
+                <legend class="box-border">>_Features</legend>
+                <div class="content">
+                  <table class="pb-3 pt-3 gender-analyzer">
+                    <tr>
+                      <td class="td-title">Gender</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">Female</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:83%;"></div>
+                        <span class="td-value-percentage">83%</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="pb-3 age-analyzer">
+                    <tr>
+                      <td class="td-title">Age</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">24</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:45%;"></div>
+                        <span class="td-value-percentage">45%</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="pb-3 ethnicity-analyzer">
+                    <tr>
+                      <td class="td-title">Ethnicity</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">African</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:23%;"></div>
+                        <span class="td-value-percentage">23%</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                </div>
+              </fieldset>
+
+            </div>
+            <!-- end column 1 -->
+
+            <!-- start column 2 -->
+            <div class="col-4">
+              <section class="analyzer__section">
+
+                <div id="my_camera"></div>
+                <div id="kairos_response" class="col-lg-6"
+                     style="padding:10px;border:1px solid rgba(51, 51, 51, 0.08);background-color:
+               rgba(204, 204, 204, 0.26);color:#fff;opacity: 0;"><i>(Response will appear here)</i></div>
+
+
+              </section>
+            </div>
+            <!-- end column 2 -->
+
+            <!-- start column 3 -->
+            <div class="col-4">
+
+              <fieldset class="box-border">
+                <legend class="box-border">>_Risk profile</legend>
+                <div class="content">
+
+                  <a class="cta" href="">EXPLORE PROFILE ON MAP</a>
+                </div>
+              </fieldset>
+
+            </div>
+            <!-- end column 3 -->
+
+          </div>
+          <!-- end row -->
+
+        </div>
+        <!-- End container -->
+
+        <div class="container utility">
+          <div class="col-2">
+            <table>
+              <tr><td>Session</td><td>:</td><td><span class="session">UNI43535</span></td></tr>
+              <tr><td>User id</td><td>:</td><td><span class="user_id">#2023032</span> </td></tr>
+              <tr><td>Duration</td><td>:</td><td><span class="duration">00:2:34</span></td></tr>
+            </table>
+          </div>
+        </div>
+
+
+      </section>
+    </article>
+
+
+
+  </main>
+
+
+
+  <footer>
+    <footer>
+      <div id="bar">
+        <ul id="progressbar">
+          <li class="active" id="step1"><a href="index.html">INTRODUCTION</a> </li>
+          <li id="step2"><a href="analyzer.html"> RISK PROFILE</a></li>
+          <li id="step3"><a href=""> Step 3</a></li>
+          <li id="step4"><a href=""> Step 4</a></li>
+        </ul>
+      </div>
+    </footer>
+  </footer>
+
+
+</body>
+
+
+<!-- load webcam -->
+<script src="js/webcam.min.js"></script>
+
+<!-- face detection -->
+<script src="js/detect.js"></script>
+
+<!-- barbare page transitions -->
+<script src="js/barba.core.js"></script>
+<script src="js/gsap.min.js"></script>
+
+<!-- project script -->
+<script async src="js/app.js"></script>
+
+</html>

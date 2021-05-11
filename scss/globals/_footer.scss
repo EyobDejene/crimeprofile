@@ -1,41 +1,87 @@
 @import '../config/variables';
+@import '../config/media';
 
-.footer {
-  grid-area: footer;
-  padding: 2rem 0;
 
-  background: $blue;
+footer{
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  margin: 0;
+}
 
-  &__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#bar {
+  width: 100%;
+  text-align: center;
+  font-family: IBM-Medium;
+  font-size: 0.875rem;
+  padding: 0;
+  margin: 0;
+}
 
-    padding: 0 0 0 20vw;
+#progressbar li a{
+  color: $white;
+  font-family: IBM-Medium;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
 
-    width: $article-width;
-  }
+#progressbar {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  color: lightgrey;
+  display: flex;
 
-  p {
-    padding: 0;
-    margin: 0;
+}
 
-    font-weight: 400;
-  }
+#progressbar .active {
+  color: $white;
+}
 
-  a {
-    display: inline;
-    color: $purple;
-    color: $pink;
-    text-decoration: none;
+#progressbar li {
+  list-style-type: none;
+  width: 25%;
+  position: relative;
+}
 
-    transition: color .25s ease-in-out;
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-      color: lighten($purple, 4%);
-      color: $green;
-    }
-  }
+
+#progressbar #step1:after {
+  content: "";
+}
+
+#progressbar #step2:after {
+  content: "";
+}
+
+#progressbar #step3:after {
+  content: "";
+}
+
+#progressbar #step4:after {
+  content: "";
+}
+
+
+
+
+
+#progressbar li:after {
+
+  display: block;
+  color: #ffffff;
+  background: $lightblack;
+  margin: 10px auto 0 auto;
+  padding: .5rem;
+}
+
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: $darkblue;
+}
+
+
+.progress-bar {
+  background-color: $darkblue;
 }

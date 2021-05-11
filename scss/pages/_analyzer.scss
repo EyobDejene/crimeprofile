@@ -1,0 +1,81 @@
+@import '../config/variables';
+@import '../config/media';
+
+
+
+
+
+table tr .td-title{
+  width: 22%;
+
+}
+
+table tr .td-separator{
+  width: 5%;
+}
+
+table tr .td-value{
+  color: $yellow;
+}
+
+table tr .td-value-bar{
+  display: flex;
+
+}
+
+table tr .td-value-percentage{
+  color: $green;
+  padding-left: 0.5rem;
+}
+
+table .bar{
+  //width: 83%;
+  height: 0.8rem;
+  position: relative;
+  background-size: 6px 100%;
+  background-image: linear-gradient(to right,
+          #fff 20%,
+          transparent 20%,
+          transparent 100%);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+
+.utility{
+  position: fixed;
+  bottom:5rem;
+  padding-left: 4rem;
+}
+
+.session{
+  color: $green;
+}
+
+.analyzer__section{
+  overflow: hidden;
+}
+
+#my_camera{
+  position: relative;
+  /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/
+}
+
+
+canvas{
+  position: relative;
+  z-index: 1;
+}
+
+
+video{
+  position: absolute;
+  z-index: 0;
+
+  -webkit-filter: grayscale(1);
+  filter: grayscale(100%);
+
+}
+

@@ -1,19 +1,16 @@
-@import 'base/normalize';
+@import 'base/global';
 @import 'base/typography';
-@import 'base/defaults';
+@import 'base/_normalize.scss';
 
-@import 'config/functions';
-@import 'config/mixins';
+@import 'config/media';
 @import 'config/variables';
 
-@import 'globals/site';
 @import 'globals/header';
 @import 'globals/main';
 @import 'globals/footer';
 
 @import 'pages/index';
-@import 'pages/guide';
+@import 'pages/analyzer';
 @import 'pages/resources';
 
 
-@import 'objects/interstitial';

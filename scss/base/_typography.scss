@@ -1,40 +1,31 @@
 @import '../config/variables';
 
-body {
-  color: $black-10;
-  line-height: 3rem;
+@font-face {
+  font-family: 'Dejavu-Regular';
+  src: url('../../fonts/DejaVu-Sans-Mono-for-Powerline.ttf');
+}
 
-  font-family: "Inter";
-  font-weight: 500;
+@font-face {
+  font-family: 'Dejavu-Oblique';
+  src: url('../../fonts/DejaVu-Sans-Mono-Bold-Oblique-for-Powerline.ttf');
+}
 
-  color: $lace;
+@font-face {
+  font-family: 'Dejavu-Bold';
+  src: url('../../fonts/DejaVu-Sans-Mono-Bold-for-Powerline.ttf');
+}
+
+@font-face {
+  font-family: 'Dejavu-Bold-Oblique';
+  src: url('../../fonts/DejaVu-Sans-Mono-Bold-Oblique-for-Powerline.ttf');
 }
 
 
-h1,
-h2,
-h3,
-h4 {
-  color: $soft-cyan;
-
-  padding: 0;
-  margin: 0;
+@font-face {
+  font-family: 'IBM-Medium';
+  src: url('../../fonts/Ibm-3270-Medium.ttf');
 }
 
-h1 {
-  padding: 2rem 0 .5rem 0;
-  font-size: 2.5rem;
-  font-weight: 500;
-}
 
-h2 {
-  padding: 2rem 0 .5rem 0;
-  font-size: 2.25rem;
-  font-weight: 400;
-}
 
-h3 {
-  padding: 2rem 0 .5rem 0;
-  font-size: 2rem;
-  font-weight: 400;
-}
+

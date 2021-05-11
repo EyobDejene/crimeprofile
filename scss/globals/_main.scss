@@ -1,34 +1,20 @@
 @import '../config/variables';
-@import '../config/mixins';
+@import '../config/media';
 
-main {
-  grid-area: main;
-  display: flex;
-  justify-content: center;
 
-  padding: 3rem 0;
+fieldset.box-border {
+  border: 1px groove #ddd !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
 }
 
-.page {
-
-  header {
-    padding: 1rem 0;
-  }
+legend.box-border {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width:auto;
+  padding:0 10px;
+  border-bottom:none;
+  color:$red;
 }
 
-
-.main-green {
-  background: $green-lite;
-}
-
-.main-pink {
-  background: $pink-dark;
-}
-
-.main-red {
-  background: $red;
-}
-
-.main-cyan {
-  background: $cyan;
-}

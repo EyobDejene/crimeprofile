@@ -1,69 +1,46 @@
 @import '../config/variables';
+@import '../config/media';
 
-.header {
-  grid-area: header;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  align-items: center;
 
-  padding: 1rem 0;
 
-  background: $blue;
+header{
+  font-family: IBM-Medium;
+  font-size: 0.875rem;
+}
 
-  .github-button-section {
-    display: flex;
-    align-items: center;
-    padding: 0 0 0 11%;
 
-    @include desktop {
-      padding: 0 0 0 20vw;
-    }
-  }
+nav .navigation{
+  display: flex;
+  justify-content: flex-end;
+  list-style:none;
+  margin: 0;
+  padding: 1rem;
+}
 
-  .docs {
-    padding: 0 1rem;
+nav .navigation li a{
+  font-size:0.875rem;
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
-    color: $pink;
+nav .navigation li{
+  display: flex;
+  justify-content: center;
+  /* align-self: center;    <---- REMOVE */
+  align-items: center;   /* <---- NEW    */
+  margin-left: 2.5rem;
+  border:none;
+}
 
-    text-decoration: none;
-    font-weight: 600;
 
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      color: lighten($pink, 5%);
-    }
-  }
+nav .navigation li{
 
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  font-size: 1rem;
-  font-weight: 600;
 
-  a {
-    padding: 0 .5rem 0 0;
-
-    text-decoration: none;
-    color: $pink;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      color: lighten($pink, 5%);
-    }
-  }
-
-  .github-button-link {
-    display: flex;
-    align-items: center;
-
-    padding: 0 0 0 1rem;
-  }
-
+nav .navigation li:first-child {
+  margin-left: 0;
+  margin-right: auto;
 }
