@@ -17,6 +17,15 @@ body {
   font-size: 12px;
 }
 
+table{
+  table-layout: fixed ;
+  width: 100%;
+  font-family: Dejavu-Regular;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+
 fieldset .content{
   font-family: Dejavu-Regular;
   padding: 1rem;

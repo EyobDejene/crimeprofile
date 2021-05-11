@@ -21,6 +21,7 @@ function runDetection(state) {
 
     var kairos = new Kairos("app_id", "app_key");
 
+
     function myDetectCallback(response) {
 
       document.getElementById(
@@ -37,6 +38,69 @@ function runDetection(state) {
 
       document.getElementById("kairos_response").innerHTML = JSON.stringify(
           kairosJSON, null, "\t");
+
+      //console.log(kairosJSON.images[0].faces[0]);
+      const age         = kairosJSON.images[0].faces[0].attributes.age;
+      const ageConf     = kairosJSON.images[0].faces[0].quality;
+      const gender      = kairosJSON.images[0].faces[0].attributes.gender.type;
+      const genderMConf = kairosJSON.images[0].faces[0].attributes.gender.maleConfidence;
+      const genderFConf = kairosJSON.images[0].faces[0].attributes.gender.femaleConfidence;
+      const asianConf   = kairosJSON.images[0].faces[0].attributes.asian;
+      const hispanicConf   = kairosJSON.images[0].faces[0].attributes.hispanic;
+      const blackConf   = kairosJSON.images[0].faces[0].attributes.black;
+      const whiteConf   = kairosJSON.images[0].faces[0].attributes.white;
+      const otherConf   = kairosJSON.images[0].faces[0].attributes.other;
+
+
+      // gender
+      let genderField = document.querySelector('.gender-analyzer .td-value');
+      let genderBar   = document.querySelector('.gender-analyzer .bar');
+      let genderConfPercentage = document.querySelector('.gender-analyzer  .td-value-percentage');
+
+      if(gender == "M") {
+        genderField.innerHTML = "Male";
+        genderConfPercentage.innerHTML = genderMConf * 100 +'%';
+        genderBar.style.width = genderMConf * 100 +'%';
+      }else{
+        genderField.innerHTML = "Female";
+        genderConfPercentage.innerHTML = genderFConf * 100 +'%';
+        genderBar.style.width = genderFConf * 100 +'%';
+      }
+
+
+
+
+
+      // age
+      let ageField = document.querySelector('.age-analyzer .td-value');
+      let ageBar   = document.querySelector('.age-analyzer .bar');
+      let ageConfPercentage = document.querySelector('.age-analyzer .td-value-percentage');
+
+      ageField.innerHTML = age;
+      ageBar.style.width = ageConf * 34 +'%';
+      ageConfPercentage.innerHTML = Math.round(ageConf * 30) +'%';
+
+
+
+      // ethnicity
+      let ethnicityField = document.querySelector('.ethnicity-analyzer .td-value');
+      let ethnicityBar   = document.querySelector('.ethnicity-analyzer .bar');
+      let ethnicityConfPercentage = document.querySelector('.ethnicity-analyzer .td-value-percentage');
+      let arrayEthnicity = {"black":blackConf, "white":whiteConf, "asian":asianConf,"hispanic":hispanicConf,"other":otherConf};
+      let highestConf = Object.keys(arrayEthnicity).reduce(function(a, b){ return arrayEthnicity[a] > arrayEthnicity[b] ? a : b });
+
+
+      ethnicityField.innerHTML =  highestConf;
+      console.log(arrayEthnicity[highestConf]);
+      ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 100) +'%';
+      ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 100) +'%';
+
+
+      function round(input){
+        Math.round((input) * 100) / 10;
+      }
+
+
 
       // call custom drawing method
       // myDrawMethod(kairosJSON.images[0].faces[0]);
@@ -60,6 +124,7 @@ function runDetection(state) {
 
     navigator.getMedia({video: true}, function() {
       // webcam is available
+
       console.log(state);
        window.setInterval(function() {
         if(state){
@@ -108,7 +173,7 @@ function runDetection(state) {
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 
         const options = { boxColor: "#ff0018" }
-        console.log(resizedDetections);
+        //console.log(resizedDetections);
         // new faceapi.draw.DrawFaceLandmarks(resizedDetections.landmarks, options).draw(canvas)
         //faceapi.draw.drawDetections(resizedDetections,options).draw(canvas);
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);

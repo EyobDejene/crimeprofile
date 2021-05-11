@@ -52,29 +52,65 @@
     <article class="analyzer page">
       <section class="analyzer_section">
         <!-- start container -->
-        <div class="container d-flex">
+        <div class="container d-flex justify-content-center align-self-center">
 
           <!-- start row -->
           <div class="row ">
 
             <!-- start column 1 -->
-            <div class="col-4  justify-content-center align-self-center">
+            <div class="col-4">
 
               <fieldset class="box-border">
                 <legend class="box-border">>_Features</legend>
                 <div class="content">
-                  <p>
-                    Catch your risk profile is a application that creates a risk profile based on
-                    your facial features.
-                    The risk profile will reveal how likely you will commit a particular crime based
-                    on machine learning algorithms and historical crime data.
-                    The tool is one example of a predictive policing tool what could potentially be
-                    deployed by police in the near future by analyzing real-time surveillance
-                    cameras in the public space.
-                    <br><br>
-                    NOTE: By using the tool you automatically agree to the privacy policy.
-                  </p>
-                  <a class="cta" href="">catch your risk profile</a>
+                  <table class="pb-3 pt-3 gender-analyzer">
+                    <tr>
+                      <td class="td-title">Gender</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">Female</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:83%;"></div>
+                        <span class="td-value-percentage">83%</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="pb-3 age-analyzer">
+                    <tr>
+                      <td class="td-title">Age</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">24</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:45%;"></div>
+                        <span class="td-value-percentage">45%</span>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <table class="pb-3 ethnicity-analyzer">
+                    <tr>
+                      <td class="td-title">Ethnicity</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value">African</td>
+                    </tr>
+                    <tr>
+                      <td class="td-title">Conf.</td>
+                      <td class="td-separator">:</td>
+                      <td class="td-value-bar">
+                        <div class="bar" style="width:23%;"></div>
+                        <span class="td-value-percentage">23%</span>
+                      </td>
+                    </tr>
+                  </table>
+
                 </div>
               </fieldset>
 
@@ -83,12 +119,12 @@
 
             <!-- start column 2 -->
             <div class="col-4">
-              <section class="analyzer__section pt-5">
+              <section class="analyzer__section">
 
                 <div id="my_camera"></div>
                 <div id="kairos_response" class="col-lg-6"
                      style="padding:10px;border:1px solid rgba(51, 51, 51, 0.08);background-color:
-               rgba(204, 204, 204, 0.26);color:#fff;"><i>(Response will appear here)</i></div>
+               rgba(204, 204, 204, 0.26);color:#fff;opacity: 0;"><i>(Response will appear here)</i></div>
 
 
               </section>
@@ -96,23 +132,13 @@
             <!-- end column 2 -->
 
             <!-- start column 3 -->
-            <div class="col-4  justify-content-center align-self-center">
+            <div class="col-4">
 
               <fieldset class="box-border">
                 <legend class="box-border">>_Risk profile</legend>
                 <div class="content">
-                  <p>
-                    Catch your risk profile is a application that creates a risk profile based on
-                    your facial features.
-                    The risk profile will reveal how likely you will commit a particular crime based
-                    on machine learning algorithms and historical crime data.
-                    The tool is one example of a predictive policing tool what could potentially be
-                    deployed by police in the near future by analyzing real-time surveillance
-                    cameras in the public space.
-                    <br><br>
-                    NOTE: By using the tool you automatically agree to the privacy policy.
-                  </p>
-                  <a class="cta" href="">catch your risk profile</a>
+
+                  <a class="cta" href="">EXPLORE PROFILE ON MAP</a>
                 </div>
               </fieldset>
 
@@ -124,6 +150,17 @@
 
         </div>
         <!-- End container -->
+
+        <div class="container utility">
+          <div class="col-2">
+            <table>
+              <tr><td>Session</td><td>:</td><td><span class="session">UNI43535</span></td></tr>
+              <tr><td>User id</td><td>:</td><td><span class="user_id">#2023032</span> </td></tr>
+              <tr><td>Duration</td><td>:</td><td><span class="duration">00:2:34</span></td></tr>
+            </table>
+          </div>
+        </div>
+
 
       </section>
     </article>

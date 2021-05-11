@@ -10,6 +10,13 @@ body {
   color: #fff;
   font-size: 12px; }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-family: Dejavu-Regular;
+  font-size: 0.75rem;
+  text-transform: uppercase; }
+
 fieldset .content {
   font-family: Dejavu-Regular;
   padding: 1rem;
@@ -469,6 +476,40 @@ footer {
 figure img {
   width: 100%;
   height: auto; }
+
+table tr .td-title {
+  width: 22%; }
+
+table tr .td-separator {
+  width: 5%; }
+
+table tr .td-value {
+  color: #FFD600; }
+
+table tr .td-value-bar {
+  display: flex; }
+
+table tr .td-value-percentage {
+  color: #00FF29;
+  padding-left: 0.5rem; }
+
+table .bar {
+  height: 0.8rem;
+  position: relative;
+  background-size: 6px 100%;
+  background-image: linear-gradient(to right, #fff 20%, transparent 20%, transparent 100%);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
+
+.utility {
+  position: fixed;
+  bottom: 5rem;
+  padding-left: 4rem; }
+
+.session {
+  color: #00FF29; }
 
 .analyzer__section {
   overflow: hidden; }
