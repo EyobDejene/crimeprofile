@@ -1,38 +1,13 @@
 @import '../config/variables';
-@import '../config/mixins';
-
-.index {
-  display: flex;
-  flex-direction: column;
-  width: $article-width;
+@import '../config/media';
 
 
-  &__section {
 
-    font-size: calc(16px + (38 - 16) * ((100vw - 320px) / (3000 - 320)));
 
-    p {
-      font-weight: 300;
-    }
 
-    a {
-      color: $lace;
-      transition: color .25s ease-in-out;
 
-      &:hover,
-      &:focus {
-        color: $cyan;
-      }
-    }
-
-    b {
-      color: $purple;
-    }
-
-    ol {
-      li {
-        font-weight: 300;
-      }
-    }
-  }
+figure img{
+  width: 100%;
+  height: auto;
 }
+

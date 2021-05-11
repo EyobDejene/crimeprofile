@@ -1,0 +1,49 @@
+@import '../config/variables';
+@import '../config/media';
+
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  min-height: 100%;
+  background: $black-b;
+  color: $white-b;
+  font-size: 12px;
+}
+
+fieldset .content{
+  font-family: Dejavu-Regular;
+  padding: 1rem;
+  font-size:0.70rem;
+  line-height: 1rem;
+}
+
+fieldset .content p{
+  padding-bottom: 1rem;
+}
+
+legend{
+  font-family: Dejavu-Regular;
+  text-transform: uppercase;
+}
+
+.cta{
+  display: block;
+  padding: 1rem;
+  border: 1px solid $white !important;
+  text-decoration: none;
+  text-align: center;
+  font-size:0.75rem;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.cta:hover{
+  color: $white;
+}

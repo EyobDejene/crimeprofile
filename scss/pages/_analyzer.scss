@@ -1,0 +1,29 @@
+@import '../config/variables';
+@import '../config/media';
+
+
+.analyzer__section{
+  overflow: hidden;
+}
+
+#my_camera{
+  position: relative;
+  /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/
+}
+
+
+canvas{
+  position: relative;
+  z-index: 1;
+}
+
+
+video{
+  position: absolute;
+  z-index: 0;
+
+  -webkit-filter: grayscale(1);
+  filter: grayscale(100%);
+
+}
+
