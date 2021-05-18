@@ -11,28 +11,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Riskprofile/scss/pages/_analyzer.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" selection-start-line="34" selection-end-line="38" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/scss/globals/_footer.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
               <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Riskprofile/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -59,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1692">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding>
                 <marker date="1621090645307" expanded="true" signature="7658:7728" ph="..." />
               </folding>
@@ -92,11 +74,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
               <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -209,17 +200,7 @@
             <path>
               <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
               <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
@@ -272,11 +253,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../Riskprofile" />
       <recent name="$PROJECT_DIR$/../Riskprofile/data" />
       <recent name="$PROJECT_DIR$/../Riskprofile/fonts" />
       <recent name="$PROJECT_DIR$/../Riskprofile/scss/base" />
       <recent name="$PROJECT_DIR$/bootstrap/css" />
-      <recent name="$PROJECT_DIR$/bootstrap/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -301,24 +282,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620471490652</updated>
-      <workItem from="1620471492711" duration="78340000" />
+      <workItem from="1620471492711" duration="78608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78340000" />
+    <option name="totallyTimeSpent" value="78608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" weight="0.32991013" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.29396662" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.29396662" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -397,13 +378,6 @@
     <entry file="file://$PROJECT_DIR$/../Riskprofile/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2850" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/scss/config/_functions.scss">
@@ -601,7 +575,7 @@
     <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1692">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <marker date="1621090645307" expanded="true" signature="7658:7728" ph="..." />
           </folding>
@@ -612,6 +586,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/docs/js/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
