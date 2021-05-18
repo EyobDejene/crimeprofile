@@ -56,12 +56,15 @@ function runDetection(state) {
       let genderField = document.querySelector('.gender-analyzer .td-value');
       let genderBar   = document.querySelector('.gender-analyzer .bar');
       let genderConfPercentage = document.querySelector('.gender-analyzer  .td-value-percentage');
+      let genderinFile = ""
 
       if(gender == "M") {
+        genderinFile = "Mannen";
         genderField.innerHTML = "Male";
         genderConfPercentage.innerHTML = genderMConf * 100 +'%';
         genderBar.style.width = genderMConf * 100 +'%';
       }else{
+        genderinFile = "Vrouwen";
         genderField.innerHTML = "Female";
         genderConfPercentage.innerHTML = genderFConf * 100 +'%';
         genderBar.style.width = genderFConf * 100 +'%';
@@ -90,7 +93,7 @@ function runDetection(state) {
       let highestConf = Object.keys(arrayEthnicity).reduce(function(a, b){ return arrayEthnicity[a] > arrayEthnicity[b] ? a : b });
 
 
-      ethnicityField.innerHTML =  highestConf;
+
       console.log(arrayEthnicity[highestConf]);
       ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 100) +'%';
       ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 100) +'%';
@@ -99,6 +102,50 @@ function runDetection(state) {
       function round(input){
         Math.round((input) * 100) / 10;
       }
+
+      function between(x, min, max) {
+        return x >= min && x <= max;
+      }
+
+
+      let Objectage = "";
+
+      if (between(age,12, 18)) {
+          Objectage = "12 tot 18 jaar";
+      }else if(between(age,18, 25)){
+          Objectage = "18 tot 25 jaar";
+      }else if(between(age,25, 45)){
+          Objectage = "25 tot 45 jaar";
+      }else if(between(age,45, 65)){
+          Objectage = "45 tot 65 jaar";
+      }else if(age >= 65){
+          Objectage = "65 jaar of ouder";
+      }
+
+      console.log(highestConf);
+      if(highestConf == "white"){
+        ethnicityField.innerHTML =  "None migration background";
+        getChart('../data/dm.json',Objectage,genderinFile);
+
+      }else if(highestConf == "black"){
+        ethnicityField.innerHTML =  "Migration background";
+        getChart('../data/mm.json',Objectage,genderinFile);
+
+      }else if(highestConf == "asian"){
+        ethnicityField.innerHTML =  "Non-western migration background";
+        getChart('../data/nwm.json',Objectage,genderinFile);
+
+      }else if(highestConf == "hispanic"){
+        ethnicityField.innerHTML =  "Western migration background";
+        getChart('../data/wm.json',Objectage,genderinFile);
+
+      }
+      else if(highestConf == "other"){
+        ethnicityField.innerHTML =  "Unknown migration background";
+        getChart('../data/other.json',Objectage,genderinFile);
+      }
+
+
 
 
 

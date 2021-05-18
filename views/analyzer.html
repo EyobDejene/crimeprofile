@@ -67,14 +67,14 @@
                     <tr>
                       <td class="td-title">Gender</td>
                       <td class="td-separator">:</td>
-                      <td class="td-value">Female</td>
+                      <td class="td-value">--</td>
                     </tr>
                     <tr>
                       <td class="td-title">Conf.</td>
                       <td class="td-separator">:</td>
                       <td class="td-value-bar">
-                        <div class="bar" style="width:83%;"></div>
-                        <span class="td-value-percentage">83%</span>
+                        <div class="bar" style="width:0%;"></div>
+                        <span class="td-value-percentage">--%</span>
                       </td>
                     </tr>
                   </table>
@@ -83,14 +83,14 @@
                     <tr>
                       <td class="td-title">Age</td>
                       <td class="td-separator">:</td>
-                      <td class="td-value">24</td>
+                      <td class="td-value">--</td>
                     </tr>
                     <tr>
                       <td class="td-title">Conf.</td>
                       <td class="td-separator">:</td>
                       <td class="td-value-bar">
-                        <div class="bar" style="width:45%;"></div>
-                        <span class="td-value-percentage">45%</span>
+                        <div class="bar" style="width:0%;"></div>
+                        <span class="td-value-percentage">--%</span>
                       </td>
                     </tr>
                   </table>
@@ -99,14 +99,14 @@
                     <tr>
                       <td class="td-title">Ethnicity</td>
                       <td class="td-separator">:</td>
-                      <td class="td-value">African</td>
+                      <td class="td-value">--</td>
                     </tr>
                     <tr>
                       <td class="td-title">Conf.</td>
                       <td class="td-separator">:</td>
                       <td class="td-value-bar">
-                        <div class="bar" style="width:23%;"></div>
-                        <span class="td-value-percentage">23%</span>
+                        <div class="bar" style="width:0%;"></div>
+                        <span class="td-value-percentage">--%</span>
                       </td>
                     </tr>
                   </table>
@@ -136,8 +136,8 @@
 
               <fieldset class="box-border">
                 <legend class="box-border">>_Risk profile</legend>
-                <div class="content">
-
+                <div class="content chart">
+                  <canvas id="myChart" width="400" height="400"></canvas>
                   <a class="cta" href="">EXPLORE PROFILE ON MAP</a>
                 </div>
               </fieldset>
@@ -176,8 +176,8 @@
       <div id="bar">
         <ul id="progressbar">
           <li class="active" id="step1"><a href="index.html">INTRODUCTION</a> </li>
-          <li id="step2"><a href="analyzer.html"> RISK PROFILE</a></li>
-          <li id="step3"><a href=""> Step 3</a></li>
+          <li class="active" id="step2"><a href="analyzer.html"> RISK PROFILE</a></li>
+          <li id="step3"><a href=""> Map view</a></li>
           <li id="step4"><a href=""> Step 4</a></li>
         </ul>
       </div>
@@ -186,6 +186,7 @@
 
 
 </body>
+
 
 
 <!-- load webcam -->
@@ -200,5 +201,11 @@
 
 <!-- project script -->
 <script async src="js/app.js"></script>
+
+
+<!-- chartjs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+<script src="js/chart.js"></script>
+
 
 </html>

@@ -33,15 +33,15 @@ legend {
 .cta {
   display: block;
   padding: 1rem;
-  border: 1px solid #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.61) !important;
   text-decoration: none;
   text-align: center;
   font-size: 0.75rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.61);
   text-transform: uppercase; }
 
 .cta:hover {
-  color: #fff; }
+  color: rgba(255, 255, 255, 0.61); }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -377,11 +377,12 @@ nav .navigation {
   justify-content: flex-end;
   list-style: none;
   margin: 0;
-  padding: 1rem; }
+  padding: 2rem 0rem;
+  overflow: hidden; }
 
 nav .navigation li a {
   font-size: 0.875rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.61);
   text-decoration: none;
   text-transform: uppercase; }
 
@@ -394,9 +395,16 @@ nav .navigation li {
   margin-left: 2.5rem;
   border: none; }
 
+nav .navigation li a {
+  color: white; }
+
 nav .navigation li:first-child {
   margin-left: 0;
   margin-right: auto; }
+
+nav .navigation li:hover {
+  border-bottom: 2px inset #0500FF;
+  position: relative; }
 
 fieldset.box-border {
   border: 1px groove #ddd !important;
@@ -427,10 +435,11 @@ footer {
   margin: 0; }
 
 #progressbar li a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
   font-family: IBM-Medium;
   font-size: 0.875rem;
-  text-decoration: none; }
+  text-decoration: none;
+  text-transform: uppercase; }
 
 #progressbar {
   padding: 0;
@@ -439,8 +448,8 @@ footer {
   color: lightgrey;
   display: flex; }
 
-#progressbar .active {
-  color: #fff; }
+#progressbar .active a {
+  color: white; }
 
 #progressbar li {
   list-style-type: none;

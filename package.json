@@ -22,6 +22,7 @@
   "dependencies": {
     "bootstrap-4-grid": "^3.4.0",
     "browser-sync": "^2.26.14",
+    "chart.js": "^3.2.1",
     "clarifai-nodejs-grpc": "^7.4.0"
   },
   "devDependencies": {
