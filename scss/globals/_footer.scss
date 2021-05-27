@@ -21,9 +21,10 @@ footer{
 #progressbar li a{
   color: rgba(255, 255, 255, 0.5);
   font-family: IBM-Medium;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-decoration: none;
   text-transform: uppercase;
+  opacity: 0.5;
 
 }
 
@@ -38,6 +39,7 @@ footer{
 
 #progressbar .active a {
   color: rgba(255, 255, 255, 1);
+  opacity: 1;
 }
 
 #progressbar li {
@@ -72,8 +74,8 @@ footer{
 
   display: block;
   color: #ffffff;
-  background: $lightblack;
-  margin: 10px auto 0 auto;
+  //background: $lightblack;
+  margin: 10px 0px 10px;
   padding: .5rem;
 }
 
@@ -81,6 +83,11 @@ footer{
 #progressbar li.active:before,
 #progressbar li.active:after {
   background: $darkblue;
+
+}
+
+#progressbar .current:after{
+  width: 45%;
 }
 
 

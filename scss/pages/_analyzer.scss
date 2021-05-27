@@ -60,22 +60,53 @@ table .bar{
 
 #my_camera{
   position: relative;
+  overflow: hidden!important;
   /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/
 }
 
 
-canvas{
+#my_camera canvas{
   position: relative;
   z-index: 1;
+  width: auto!important;
 }
 
 
 video{
   position: absolute;
   z-index: 0;
-
+  margin-top: 0.5rem;
   -webkit-filter: grayscale(1);
   filter: grayscale(100%);
-
 }
+
+video .red_dot{
+  background-color: #FF1313;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  right:0;
+}
+
+
+
+.risk-percentage,
+.age-category{
+  color:$green;
+}
+
+.crime-category,
+.ethnicity-category,
+.gender-category
+{
+  color:$yellow;
+}
+
+
+fieldset .content p{
+  font-size: 0.65rem;
+}
+
 

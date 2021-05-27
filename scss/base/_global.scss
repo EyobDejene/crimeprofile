@@ -21,15 +21,15 @@ table{
   table-layout: fixed ;
   width: 100%;
   font-family: Dejavu-Regular;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
 }
 
 
 fieldset .content{
   font-family: Dejavu-Regular;
-  padding: 1rem;
-  font-size:0.70rem;
+  //padding: 1rem;
+  font-size:0.75rem;
   line-height: 1rem;
 }
 
@@ -45,14 +45,16 @@ legend{
 .cta{
   display: block;
   padding: 1rem;
-  border: 1px solid $white !important;
+  border: 1px solid $white_white !important;
   text-decoration: none;
   text-align: center;
-  font-size:0.75rem;
-  color: $white;
+  font-size:0.85rem;
+  color: $green;
   text-transform: uppercase;
+  font-family: IBM-Medium;
 }
 
 .cta:hover{
-  color: $white;
+  color: #000000;
+  background-color: $white_white;
 }

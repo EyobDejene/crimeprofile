@@ -14,13 +14,12 @@ table {
   table-layout: fixed;
   width: 100%;
   font-family: Dejavu-Regular;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase; }
 
 fieldset .content {
   font-family: Dejavu-Regular;
-  padding: 1rem;
-  font-size: 0.70rem;
+  font-size: 0.75rem;
   line-height: 1rem; }
 
 fieldset .content p {
@@ -33,15 +32,17 @@ legend {
 .cta {
   display: block;
   padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.61) !important;
+  border: 1px solid #fff !important;
   text-decoration: none;
   text-align: center;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.61);
-  text-transform: uppercase; }
+  font-size: 0.85rem;
+  color: #00FF29;
+  text-transform: uppercase;
+  font-family: IBM-Medium; }
 
 .cta:hover {
-  color: rgba(255, 255, 255, 0.61); }
+  color: #000000;
+  background-color: #fff; }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -62,6 +63,18 @@ legend {
 @font-face {
   font-family: 'IBM-Medium';
   src: url("../../fonts/Ibm-3270-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("../../fonts/Roboto-Bold.ttf"); }
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("../../fonts/Roboto-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url("../../fonts/Roboto-Thin.ttf"); }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -437,9 +450,10 @@ footer {
 #progressbar li a {
   color: rgba(255, 255, 255, 0.5);
   font-family: IBM-Medium;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  opacity: 0.5; }
 
 #progressbar {
   padding: 0;
@@ -449,7 +463,8 @@ footer {
   display: flex; }
 
 #progressbar .active a {
-  color: white; }
+  color: white;
+  opacity: 1; }
 
 #progressbar li {
   list-style-type: none;
@@ -471,13 +486,15 @@ footer {
 #progressbar li:after {
   display: block;
   color: #ffffff;
-  background: #2E2C2C;
-  margin: 10px auto 0 auto;
+  margin: 10px 0px 10px;
   padding: .5rem; }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
   background: #0500FF; }
+
+#progressbar .current:after {
+  width: 45%; }
 
 .progress-bar {
   background-color: #0500FF; }
@@ -485,6 +502,14 @@ footer {
 figure img {
   width: 100%;
   height: auto; }
+
+.index .content h1 {
+  font-size: 4rem;
+  font-family: Roboto-Bold; }
+
+.index .content p {
+  font-size: 1rem;
+  font-family: IBM-Medium; }
 
 table tr .td-title {
   width: 22%; }
@@ -525,14 +550,38 @@ table .bar {
 
 #my_camera {
   position: relative;
+  overflow: hidden !important;
   /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/ }
 
-canvas {
+#my_camera canvas {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  width: auto !important; }
 
 video {
   position: absolute;
   z-index: 0;
+  margin-top: 0.5rem;
   -webkit-filter: grayscale(1);
   filter: grayscale(100%); }
+
+video .red_dot {
+  background-color: #FF1313;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  right: 0; }
+
+.risk-percentage,
+.age-category {
+  color: #00FF29; }
+
+.crime-category,
+.ethnicity-category,
+.gender-category {
+  color: #FFD600; }
+
+fieldset .content p {
+  font-size: 0.65rem; }

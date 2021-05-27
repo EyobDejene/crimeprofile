@@ -1,13 +1,22 @@
 let ctx = document.getElementById('myChart').getContext('2d');
+
 var myChart = new Chart(ctx, {
+
+
+
   type: 'bar',
   data: {
     // labels: labels,
     datasets: [
       {
-        // label: '# of Votes',
+
         data: {},
+        // borderColor: 'red',
+        // backgroundColor:\,
+       // backgroundColor:['linear-gradient(to right,#fff 20%,transparent 20%,transparent 100%)'],
+
         backgroundColor: [
+        //   'linear-gradient(90deg, red 1%, transparent 1%) 1px 0, red',
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
@@ -16,6 +25,7 @@ var myChart = new Chart(ctx, {
           'rgba(255, 159, 64, 0.2)'
         ],
         borderColor: [
+          // 'rgba(255, 255, 255, 1)'
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
@@ -23,16 +33,82 @@ var myChart = new Chart(ctx, {
           'rgba(153, 102, 255, 1)',
           'rgba(255, 159, 64, 1)'
         ],
-        borderWidth: 1
+        borderWidth: 1,
+
+
       }]
   },
+
   options: {
+
+
+    plugins: {
+      legend: {
+        display: false,
+        labels: {
+          color: 'rgb(255, 99, 132)'
+        }
+      },
+
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            var label = context.dataset.label || '';
+
+            if (label) {
+              label += ': ';
+            }
+            if (context.parsed.y !== null) {
+              label +=  context.parsed.y +'%';
+            }
+            return label;
+          }
+        }
+      }
+
+
+    },
+
+
     scales: {
       y: {
-        beginAtZero: true
+        ticks: {
+          color: "rgba(255,255,255,1)",
+          // Include a dollar sign in the ticks
+          callback: function(value, index, values) {
+            return value + '%';
+          }
+        }
+      },
+      x:{
+        ticks: {
+
+            fontFamily: "Ibm-3270",
+
+          // Include a dollar sign in the ticks
+          // maxRotation: 75,
+          // minRotation: 75,
+          padding:0,
+          color: "rgba(255,255,255,1)",
+          font: {
+            size: 12,
+          }
+        }
       }
-    }
-  }
+    },
+
+    tooltips: {
+      mode: 'label',
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return data.labels[tooltipItems.index] + ' ';
+        }
+      }
+    },
+
+
+  },
+
 });
 
 
@@ -49,26 +125,38 @@ function getChart(dataFile,age,gender) {
       // console.log('dtA: ', data);
 
       // var filter = {
-      //   Leeftijd: '45 tot 65 jaar',
-      //   Geslacht: 'Mannen'
+      //   age: '45 tot 65 jaar',
+      //   gender: 'Mannen'
       // };
 
       function getFilterdData(dataObject, age, gender) {
         const dataRaw = dataObject.filter(
-            item => item.Leeftijd === age && item.Geslacht === gender);
+            item => item.age === age && item.gender === gender);
         const transformedData = dataRaw.map(item => {
           return {
-            vermogensmisdrijven: item['Totaal vermogensmisdrijven'],
-            vernielingOpenbareOrde: item['Totaal vernieling en openbare orde'],
-            geweldsmisdrijven: item['Totaal geweldsmisdrijven'],
-            verkeersmisdrijven: item['Totaal verkeersmisdrijven'],
-            drugsmisdrijven: item['Totaal verdachten van drugsmisdrijven'],
-            vuurwapenmisdrijven: item['Totaal verdachten van vuurwapenmisdrijven'],
+            "property crimes": Math.round(( item['property crimes'] / item['total'] *  100  ) - (100 /  3348350 * item['property crimes'])  ) ,
+            "public-order crimes":  Math.round((item['public-order crimes']  / item['total'] * 100  ) - (100 /  3348350 * item['public-order crimes']) ),
+            "violent crimes":  Math.round((item['violent crimes'] / item['total'] *  100 ) - (100 /  3348350 * item['violent crimes']) ),
+            "traffic offenses":  Math.round((item['traffic offenses']  /  item['total']  * 100 ) - (100 /  3348350 * item['traffic offenses']) ),
+            "drug offenses":  Math.round((item['drug offenses'] / item['total']  * 100  ) - (100 /  3348350 * item['drug offenses']) ),
+            // vuurwapenmisdrijven: item['vuurwapenmisdrijven'],
           }
         });
 
-        data = transformedData;
-        return data[0];
+        data = transformedData[0];
+
+        var max = Math.max.apply(null,Object.keys(data).map(function(x){ return data[x] }));
+        let key = Object.keys(data).filter(function(x){ return data[x] == max; })[0];
+        let category = key;
+        let value = data[key];
+
+
+        document.querySelector('.risk-percentage').innerHTML = value + '%';
+        document.querySelector('.crime-category').innerHTML = category;
+        document.querySelector('.age-category').innerHTML = age;
+
+
+        return data;
       }
 
      // console.log(getFilterdData(data, age, gender));
@@ -84,3 +172,31 @@ function getChart(dataFile,age,gender) {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
