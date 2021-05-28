@@ -63,15 +63,14 @@ function runDetection(state) {
       if(gender == "M") {
         genderinFile = "males";
         genderField.innerHTML = "male";
-        genderConfPercentage.innerHTML = genderMConf * 100 +'%';
-        genderBar.style.width = genderMConf * 100 +'%';
+        genderConfPercentage.innerHTML = Math.round((genderMConf * 45) / 0.4534) +'%';
+        genderBar.style.width = Math.round((genderMConf * 45) / 0.4534)+'%';
       }else{
         genderinFile = "females";
         genderField.innerHTML = "female";
-        genderConfPercentage.innerHTML = genderFConf * 100 +'%';
-        genderBar.style.width = genderFConf * 100 +'%';
+        genderConfPercentage.innerHTML = Math.round(genderFConf * 45 / 0.4534) +'%';
+        genderBar.style.width = Math.round(genderFConf * 45 / 0.4534) +'%';
       }
-
 
 
       // age
@@ -80,8 +79,9 @@ function runDetection(state) {
       let ageConfPercentage = document.querySelector('.age-analyzer .td-value-percentage');
 
       ageField.innerHTML = age;
-      ageBar.style.width = ageConf * 34 +'%';
-      ageConfPercentage.innerHTML = Math.round(ageConf * 30) +'%';
+      console.log(ageConf);
+      ageBar.style.width = ageConf * 60 +'%';
+      ageConfPercentage.innerHTML = Math.round(ageConf * 60) +'%';
 
 
       // ethnicity
@@ -94,8 +94,8 @@ function runDetection(state) {
 
 
       console.log(arrayEthnicity[highestConf]);
-      ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 100) +'%';
-      ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 100) +'%';
+      ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
+      ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
 
 
       function round(input){
@@ -188,9 +188,9 @@ function runDetection(state) {
 
       Webcam.snap(function(data_uri) {
         // display results in page
-        // console.log(data_uri);
+        console.log(data_uri);
         var options = {"selector": "FULL"};
-      //  kairos.detect(data_uri, myDetectCallback, options);
+        kairos.detect(data_uri, myDetectCallback, options);
 
       });
     }
@@ -263,6 +263,30 @@ function runDetection(state) {
       return false;
     });
 
+
+}
+
+
+
+
+
+function snapData(){
+
+
+  Webcam.snap(function(data_uri) {
+
+    let gender = document.querySelector('.gender-category').innerHTML;
+    let age = document.querySelector('.age-category').innerHTML;
+    let ethnicity = document.querySelector('.ethnicity-category').innerHTML;
+
+    localStorage.setItem('image', data_uri);
+    localStorage.setItem('gender', gender);
+    localStorage.setItem('age', age);
+    localStorage.setItem('ethnicity', ethnicity);
+
+    window.location = '/faces.html';
+
+  });
 
 }
 

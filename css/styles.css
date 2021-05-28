@@ -10,6 +10,9 @@ body {
   color: #fff;
   font-size: 12px; }
 
+main {
+  padding-bottom: 10rem; }
+
 table {
   table-layout: fixed;
   width: 100%;
@@ -43,6 +46,26 @@ legend {
 .cta:hover {
   color: #000000;
   background-color: #fff; }
+
+.helper-box {
+  width: 100%;
+  position: relative;
+  padding-top: .5rem;
+  padding-bottom: .5rem; }
+
+.helper {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+  right: 0;
+  border: 1px solid #fff;
+  font-family: Dejavu-Regular;
+  cursor: pointer; }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -437,7 +460,8 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
-  margin: 0; }
+  margin: 0;
+  opacity: 0.9; }
 
 #bar {
   width: 100%;
@@ -554,14 +578,14 @@ table .bar {
   /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/ }
 
 #my_camera canvas {
-  position: relative;
+  position: absolute;
+  left: 0;
   z-index: 1;
   width: auto !important; }
 
 video {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  margin-top: 0.5rem;
   -webkit-filter: grayscale(1);
   filter: grayscale(100%); }
 
@@ -585,3 +609,51 @@ video .red_dot {
 
 fieldset .content p {
   font-size: 0.65rem; }
+
+.content .image-holder {
+  height: 5rem;
+  width: 100%;
+  position: relative;
+  padding-bottom: 1rem; }
+
+.faces .faces-holder {
+  padding-top: 1.3rem; }
+
+.image-holder img {
+  width: auto;
+  height: 100%;
+  object-fit: fill;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(100%); }
+
+.faces .image-holder img {
+  width: 100%;
+  height: auto; }
+
+.faces .faces-holder .image-holder {
+  padding-bottom: 4rem; }
+
+.faces-holder {
+  max-height: 50rem;
+  overflow: auto; }
+
+.faces .image-holder {
+  padding-bottom: 1rem; }
+
+.features table {
+  border-spacing: 0.5rem; }
+
+.features table tr td {
+  color: #FF11D9; }
+
+.features select option {
+  background-color: transparent; }
+
+select {
+  background: transparent;
+  color: #fff;
+  border-style: none; }
+
+select option {
+  background: transparent;
+  -webkit-appearance: none; }

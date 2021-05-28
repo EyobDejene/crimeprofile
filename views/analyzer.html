@@ -29,7 +29,7 @@
 
 <body data-barba="wrapper">
 
-  <main data-barba="container" data-barba-namespace="analyzer" data-title="Intro">
+  <main data-barba="container" data-barba-namespace="analyzer" data-title="analyzer">
 
     <div class="container">
       <header class="pb-3">
@@ -65,6 +65,10 @@
 
               <fieldset class="box-border">
                 <legend class="box-border">>_Features</legend>
+                <div class="helper-box">
+                  <div class="helper">?</div>
+                </div>
+
                 <div class="content">
                   <table class="pb-3 pt-3 gender-analyzer">
                     <tr>
@@ -136,10 +140,11 @@
 
             <!-- start column 3 -->
             <div class="col-4">
-
               <fieldset class="box-border">
                 <legend class="box-border">>_Crime profile</legend>
-
+                <div class="helper-box">
+                  <div class="helper">?</div>
+                </div>
                 <div class="content chart">
                   <p>
                     <!--Met jou uiterlijke kenmerken behoor je tot een groep waarvan-->
@@ -162,7 +167,7 @@
                   </p>
                   <!--<div id="my_dataviz"></div>-->
                   <canvas id="myChart" class="pb-3" width="400" height="350"></canvas>
-                  <a class="cta" href="">View similar faces</a>
+                  <a class="cta save-data" href="javascript:;" onclick="snapData(); return false;">View similar faces</a>
                 </div>
 
               </fieldset>
@@ -202,7 +207,7 @@
         <ul id="progressbar">
           <li class="active" id="step1"><a href="index.html">Introduction</a> </li>
           <li class="active current" id="step2"><a href="analyzer.html"> Crime PROFILE</a></li>
-          <li id="step3"><a href=""> View similar faces</a></li>
+          <li id="step3"><a href="faces.html"> View similar faces</a></li>
           <li id="step4"><a href=""> Step 4</a></li>
         </ul>
       </div>

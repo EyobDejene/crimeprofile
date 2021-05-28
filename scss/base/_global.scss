@@ -17,6 +17,10 @@ body {
   font-size: 12px;
 }
 
+main{
+  padding-bottom: 10rem;
+}
+
 table{
   table-layout: fixed ;
   width: 100%;
@@ -42,6 +46,8 @@ legend{
   text-transform: uppercase;
 }
 
+
+
 .cta{
   display: block;
   padding: 1rem;
@@ -57,4 +63,26 @@ legend{
 .cta:hover{
   color: #000000;
   background-color: $white_white;
+}
+
+.helper-box{
+  width: 100%;
+  position: relative;
+  padding-top:.5rem;
+  padding-bottom: .5rem;
+}
+
+.helper{
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  font-size:   0.6rem;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+  right: 0;
+  border:1px solid $white_white;
+  font-family: Dejavu-Regular;
+  cursor: pointer;
 }

@@ -1,0 +1,65 @@
+.content .image-holder{
+  height: 5rem;
+  width: 100%;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.faces .faces-holder{
+  padding-top: 1.3rem;
+}
+
+.image-holder img {
+  width: auto;
+  height: 100%;
+  object-fit: fill;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(100%);
+}
+
+.faces .image-holder img{
+  width: 100%;
+  height: auto;
+}
+.faces .faces-holder .image-holder{
+  padding-bottom: 4rem;
+}
+
+.faces-holder{
+  max-height: 50rem;
+  overflow: auto;
+
+}
+
+.faces .image-holder{
+  padding-bottom: 1rem;
+}
+
+.features table{
+  border-spacing: 0.5rem;
+}
+.features table tr{
+
+}
+
+
+.features table tr td{
+  color: $pink;
+}
+
+
+.features select option{
+  background-color: transparent;
+
+}
+
+select{
+  background: transparent;
+  color:$white_white;
+  border-style: none;
+}
+
+select option {
+  background: transparent;
+  -webkit-appearance: none;
+}

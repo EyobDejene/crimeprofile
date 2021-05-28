@@ -11,13 +11,14 @@ for(i=0, len=anchors.length; i<len; i++){
 function runDetection(state) {
 
     Webcam.set({
-      width:500,
-      height: 400,
+      width:'420',
+      height: '300',
       image_format: 'jpeg',
       jpeg_quality: 90
     });
 
     Webcam.attach('#my_camera');
+
 
     var kairos = new Kairos("app_id", "app_key");
 
@@ -31,6 +32,7 @@ function runDetection(state) {
       $response.removeClass("modal");
 
       var kairosJSON = JSON.parse(response.responseText);
+      console.log(kairosJSON);
       if (!kairosJSON.images[0].faces[0]) {
         console.log('no images in face response');
         return;
@@ -45,8 +47,8 @@ function runDetection(state) {
       const gender      = kairosJSON.images[0].faces[0].attributes.gender.type;
       const genderMConf = kairosJSON.images[0].faces[0].attributes.gender.maleConfidence;
       const genderFConf = kairosJSON.images[0].faces[0].attributes.gender.femaleConfidence;
-      const asianConf   = kairosJSON.images[0].faces[0].attributes.asian;
-      const hispanicConf   = kairosJSON.images[0].faces[0].attributes.hispanic;
+      const asianConf    = kairosJSON.images[0].faces[0].attributes.asian;
+      const hispanicConf = kairosJSON.images[0].faces[0].attributes.hispanic;
       const blackConf   = kairosJSON.images[0].faces[0].attributes.black;
       const whiteConf   = kairosJSON.images[0].faces[0].attributes.white;
       const otherConf   = kairosJSON.images[0].faces[0].attributes.other;
@@ -56,21 +58,19 @@ function runDetection(state) {
       let genderField = document.querySelector('.gender-analyzer .td-value');
       let genderBar   = document.querySelector('.gender-analyzer .bar');
       let genderConfPercentage = document.querySelector('.gender-analyzer  .td-value-percentage');
-      let genderinFile = ""
+      let genderinFile = "";
 
       if(gender == "M") {
-        genderinFile = "Mannen";
-        genderField.innerHTML = "Male";
+        genderinFile = "males";
+        genderField.innerHTML = "male";
         genderConfPercentage.innerHTML = genderMConf * 100 +'%';
         genderBar.style.width = genderMConf * 100 +'%';
       }else{
-        genderinFile = "Vrouwen";
-        genderField.innerHTML = "Female";
+        genderinFile = "females";
+        genderField.innerHTML = "female";
         genderConfPercentage.innerHTML = genderFConf * 100 +'%';
         genderBar.style.width = genderFConf * 100 +'%';
       }
-
-
 
 
 
@@ -82,7 +82,6 @@ function runDetection(state) {
       ageField.innerHTML = age;
       ageBar.style.width = ageConf * 34 +'%';
       ageConfPercentage.innerHTML = Math.round(ageConf * 30) +'%';
-
 
 
       // ethnicity
@@ -111,41 +110,60 @@ function runDetection(state) {
       let Objectage = "";
 
       if (between(age,12, 18)) {
-          Objectage = "12 tot 18 jaar";
+          Objectage = "12-18";
+          document.querySelector('.age-category').innerHTML = Objectage;
       }else if(between(age,18, 25)){
-          Objectage = "18 tot 25 jaar";
+          Objectage = "18-25";
+          document.querySelector('.age-category').innerHTML = Objectage;
       }else if(between(age,25, 45)){
-          Objectage = "25 tot 45 jaar";
+          Objectage = "25-45";
+           document.querySelector('.age-category').innerHTML = Objectage;
       }else if(between(age,45, 65)){
-          Objectage = "45 tot 65 jaar";
+          Objectage = "45-65";
+          document.querySelector('.age-category').innerHTML = Objectage;
       }else if(age >= 65){
-          Objectage = "65 jaar of ouder";
+          Objectage = "65-65+";
+          document.querySelector('.age-category').innerHTML = Objectage;
       }
 
-      console.log(highestConf);
+      // console.log(highestConf);
       if(highestConf == "white"){
-        ethnicityField.innerHTML =  "None migration background";
-        getChart('../data/dm.json',Objectage,genderinFile);
+        let ethnicity =  "dutch background";
+        ethnicityField.innerHTML = highestConf;
+        getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+          document.querySelector('.gender-category').innerHTML = genderinFile;
+          document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }else if(highestConf == "black"){
-        ethnicityField.innerHTML =  "Migration background";
-        getChart('../data/mm.json',Objectage,genderinFile);
+        let ethnicity = "migration background";
+            ethnicityField.innerHTML = highestConf;
+        getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+          document.querySelector('.gender-category').innerHTML = genderinFile;
+          document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }else if(highestConf == "asian"){
-        ethnicityField.innerHTML =  "Non-western migration background";
-        getChart('../data/nwm.json',Objectage,genderinFile);
+        let ethnicity ="non-western migration background";
+            ethnicityField.innerHTML =  highestConf;
+        getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+          document.querySelector('.gender-category').innerHTML = genderinFile;
+          document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }else if(highestConf == "hispanic"){
-        ethnicityField.innerHTML =  "Western migration background";
-        getChart('../data/wm.json',Objectage,genderinFile);
+        let ethnicity = "western migration background";
+            ethnicityField.innerHTML = highestConf;
+        getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+          document.querySelector('.gender-category').innerHTML = genderinFile;
+          document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }
       else if(highestConf == "other"){
-        ethnicityField.innerHTML =  "Unknown migration background";
-        getChart('../data/other.json',Objectage,genderinFile);
+        let ethnicity = "unknown migration background";
+            ethnicityField.innerHTML = highestConf;
+        getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+          document.querySelector('.gender-category').innerHTML = genderinFile;
+          document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
       }
-
-
 
 
 
@@ -155,11 +173,24 @@ function runDetection(state) {
 
     function snap() {
       console.log('snapshot');
+
+      // getChart('../data/geregistreerd/MMA_verdachten_geregistreerd.json','12 tot 18 jaar','Vrouwen');
+
+
+      // let ethnicity = "dutch background";
+      // let Objectage = "65-65+";
+      // let genderinFile = "females";
+
+     // getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+     //   document.querySelector('.gender-category').innerHTML = genderinFile;
+     //   document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+     //  document.querySelector('.age-category').innerHTML = Objectage;
+
       Webcam.snap(function(data_uri) {
         // display results in page
         // console.log(data_uri);
         var options = {"selector": "FULL"};
-        kairos.detect(data_uri, myDetectCallback, options);
+      //  kairos.detect(data_uri, myDetectCallback, options);
 
       });
     }
@@ -177,7 +208,7 @@ function runDetection(state) {
         if(state){
           snap();
         }
-      }, 1000);
+      }, 8000);
 
 
     }, function() {
