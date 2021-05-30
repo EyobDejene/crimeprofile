@@ -83,29 +83,29 @@
                           <tr>
                             <td>$Gender:</td>
                             <td>
-                              <select>
-                                <option>Male</option>
-                                <option>Female</option>
+                              <select id="genderSelection" onchange="updateChart()">
+                                <option value="males">Male</option>
+                                <option  value="females">Female</option>
                               </select>
                             </td>
                           </tr>
                           <tr>
                             <td>$Age:</td>
                             <td>
-                              <select class="age">
-                                <option value="12">12</option>
+                              <select id="ageSelection" onchange="updateChart()">
+
                               </select>
                             </td>
                           </tr>
                           <tr>
                             <td>$Ethnicity:</td>
                             <td>
-                              <select>
-                                <option>White</option>
-                                <option>Black</option>
-                                <option>Asian</option>
-                                <option>Hispanic</option>
-                                <option>Other</option>
+                              <select id="ethnicitySelection" onchange="updateChart()">
+                                <option value="white">White</option>
+                                <option value="black">Black</option>
+                                <option value="asian">Asian</option>
+                                <option value="hispanic">Hispanic</option>
+                                <option value="other">Other</option>
                               </select>
                             </td>
                           </tr>
@@ -154,42 +154,9 @@
                   <div class="helper">?</div>
                 </div>
                 <div class="content faces-holder">
-                  <div class="row">
-                    <div class="col-2">
-                      <div class="image-holder">
-                      <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="image-holder">
-                        <img src="https://thispersondoesnotexist.com/image"/>
-                      </div>
-                    </div>
+                  <div class="loader not-visible"><img src="img/loader4.gif"><p>Loading mugshots..</p></div>
+                  <div class="row"  id="face-objects">
+
                   </div>
                 </div>
 
@@ -255,55 +222,59 @@
 <!-- chartjs -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 <script src="js/chart.js"></script>
+<script src="js/db.js"></script>
 
 
 <script>
 
   let image = localStorage.getItem('image');
+  let gender = localStorage.getItem('gender');
+  let age_cat = localStorage.getItem('age_cat');
+  let age = ageChecker(localStorage.getItem('age'));
+  let ethnicity = localStorage.getItem('ethnicity');
+
+  getFaces(gender,age_cat,localStorage.getItem('age'),ethnicity);
+
+
+  getData(gender,age,ethnicity);
+  getAges();
+
+
+
   if(image) {
     document.querySelector(".image-holder img").src = image;
+    addSelected('genderSelection',gender);
+    addSelected('ethnicitySelection',ethnicity);
   }
-
-
-  let gender = localStorage.getItem('gender');
-  let age = localStorage.getItem('age');
-  let d_ethnicity = localStorage.getItem('ethnicity');
-
-
-
-  getData(gender,age,d_ethnicity);
   
-  function getData(gender,age,d_ethnicity){
-  console.log(d_ethnicity);
+  function getData(gender,age,ethnicity){
 
-
-    
-    if(d_ethnicity == "dutch background"){
+    if(ethnicity == "white"){
       let ethnicity =  "dutch background";
       getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json',age,gender);
       document.querySelector('.gender-category').innerHTML = gender;
       document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
-    }else if(d_ethnicity == "migration background"){
+    }else if(ethnicity == "black"){
       let ethnicity = "migration background";
       getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json',age,gender);
       document.querySelector('.gender-category').innerHTML = gender;
       document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
-    }else if(d_ethnicity == "non-western migration background"){
+    }else if(ethnicity == "asian"){
       let ethnicity ="non-western migration background";
       getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json',age,gender);
       document.querySelector('.gender-category').innerHTML = gender;
       document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
-    }else if(d_ethnicity == "western migration background"){
+    }else if(ethnicity == "hispanic"){
       let ethnicity = "western migration background";
       getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json',age,gender);
       document.querySelector('.gender-category').innerHTML = gender;
       document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
     }
-    else if(d_ethnicity == "unknown migration background"){
+    else if(ethnicity == "other"){
       let ethnicity = "unknown migration background";
       getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json',age,gender);
       document.querySelector('.gender-category').innerHTML = gender;
@@ -311,6 +282,128 @@
 
     }
   }
+
+
+
+
+  function getAges(){
+    let ageSelection = document.querySelector('#ageSelection');
+    for (let i =12; i < 100; i++) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.innerHTML = i;
+      ageSelection.appendChild(opt);
+
+      // ageSelection.append('<option value="'+i+'">'+i+'</option>');
+    }
+
+    addSelected('ageSelection',localStorage.getItem('age'));
+  }
+
+
+
+  function updateChart() {
+      let gender = document.querySelector('#genderSelection').value;
+      let age = document.querySelector('#ageSelection').value;
+      let ethnicity = document.querySelector('#ethnicitySelection').value;
+
+
+    ageChecker(age);
+
+    console.log(gender);
+    console.log( ageChecker(age));
+    console.log(ethnicity);
+
+    if(ethnicity == "white"){
+      let ethnicity =  "dutch background";
+      getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json',ageChecker(age),gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }else if(ethnicity == "black"){
+      let ethnicity = "migration background";
+      getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json',ageChecker(age),gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }else if(ethnicity == "asian"){
+      let ethnicity ="non-western migration background";
+      getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json',ageChecker(age),gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }else if(ethnicity == "hispanic"){
+      let ethnicity = "western migration background";
+      getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json',ageChecker(age),gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }
+    else if(ethnicity == "other"){
+      let ethnicity = "unknown migration background";
+      getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json',ageChecker(age),gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }
+
+
+    getFaces(gender,ageChecker(age),age,ethnicity)
+
+
+
+  }
+
+
+
+  function between(x, min, max) {
+    return x >= min && x <= max;
+  }
+
+  function ageChecker(age) {
+    if (between(age, 12, 18)) {
+      age = "12-18";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 18, 25)) {
+      age = "18-25";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 25, 45)) {
+      age = "25-45";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 45, 65)) {
+      age = "45-65";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (age >= 65) {
+      age = "65-65+";
+      document.querySelector('.age-category').innerHTML = age;
+    }
+    return age;
+  }
+
+
+
+  function addSelected(element,value) {
+    let select = document.getElementById(element);
+    let option;
+
+
+
+    for (let i = 0; i < select.options.length; i++) {
+      option = select.options[i];
+
+      if (option.value == value) {
+
+        // or
+        // if (option.text == 'Malaysia') {
+        option.selected = 'selected';
+        return;
+      }
+    }
+  }
+
+
+
+
 
 
 </script>

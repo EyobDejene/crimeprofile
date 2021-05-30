@@ -67,6 +67,26 @@ legend {
   font-family: Dejavu-Regular;
   cursor: pointer; }
 
+.loader {
+  height: auto;
+  width: 60%;
+  position: relative;
+  margin: auto;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  text-align: center; }
+
+.loader p {
+  display: block;
+  padding-top: 0rem; }
+
+.loader img {
+  height: auto;
+  width: 100%; }
+
+.not-visible {
+  display: none; }
+
 @font-face {
   font-family: 'Dejavu-Regular';
   src: url("../../fonts/DejaVu-Sans-Mono-for-Powerline.ttf"); }
@@ -406,7 +426,9 @@ template {
 
 header {
   font-family: IBM-Medium;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  background-color: #000;
+  z-index: 3; }
 
 nav .navigation {
   display: flex;

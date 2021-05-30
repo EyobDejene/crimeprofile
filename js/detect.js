@@ -276,15 +276,18 @@ function snapData(){
   Webcam.snap(function(data_uri) {
 
     let gender = document.querySelector('.gender-category').innerHTML;
-    let age = document.querySelector('.age-category').innerHTML;
-    let ethnicity = document.querySelector('.ethnicity-category').innerHTML;
+    let age_cat = document.querySelector('.age-category').innerHTML;
+    let age = document.querySelector('.age-analyzer .td-value').innerHTML;
+    let ethnicity = document.querySelector('.ethnicity-analyzer .td-value').innerHTML;
 
     localStorage.setItem('image', data_uri);
     localStorage.setItem('gender', gender);
+    localStorage.setItem('age_cat', age_cat);
     localStorage.setItem('age', age);
     localStorage.setItem('ethnicity', ethnicity);
 
-    window.location = '/faces.html';
+
+    saveData(gender,age_cat,age,ethnicity,data_uri)
 
   });
 
