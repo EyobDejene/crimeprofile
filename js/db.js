@@ -77,7 +77,7 @@ function getFaces(gender,age_cat,age,ethnicity){
     complete:function(data){
       // Hide image container
       console.log('completed');
-      //document.querySelector('.loader').classList.add('not-visible');
+      document.querySelector('.loader').classList.add('not-visible');
     }
   });
 }
