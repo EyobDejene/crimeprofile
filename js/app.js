@@ -23,7 +23,10 @@ barba.init({
             // .to('nav a', {opacity: 1, stagger: .1, y: '0%', delay: .15}, 0)
             // .to('.github-button-section', {opacity: 1, y: '0%', duration: 1}, 0)
            .from('.page', {opacity: 0})
-           .to('.page', {opacity: 1,  ease: 'power4.in', duration: 2});
+           .to('.page', {opacity: 1,  ease: 'power4.in', duration: 2})
+           .from('.page-loader',{opacity:1})
+           .to('.page-loader',{opacity:0,ease: 'power4.in', duration: 0})
+              .to('.page-loader',{display:'none',ease: 'power4.in', duration: 1})
         });
 
 
@@ -62,7 +65,7 @@ barba.init({
           timeline
               .from('.page', {opacity: 1})
               .to('.page', {opacity: 0, ease: 'power4.out', duration: 1})
-              .current.container.remove();
+              //.current.container.remove();
         })
       }
     },
@@ -75,14 +78,21 @@ barba.init({
 barba.hooks.once((data) => {
   //console.log(data.next.namespace);
   if(data.next.namespace == "analyzer"){
-    runDetection(true);
+    //runDetection(true);
+    recognizer()
   }
 });
 
 barba.hooks.enter((data) => {
   //console.log(data.next.namespace);
+
   if(data.next.namespace == "analyzer"){
-    runDetection(true);
+   // setTimeout(function() {
+   //   runDetection(true);
+   // },1000)
+
+    recognizer()
+
   }
 });
 
@@ -104,6 +114,69 @@ barba.hooks.leave((data) => {
 });
 
 
+
+let helper = document.querySelectorAll('.helper');
+for(let i =0; i < helper.length; i++){
+  helper[i].addEventListener('click', notify);
+}
+
+
+
+
+function notify(msg){
+  let frame = document.querySelector('.overlay');
+  frame.querySelector('p').innerHTML = "";
+  if(msg.type == "click"){
+    frame.classList.add('manual');
+    msg = msg.srcElement.getAttribute('data-msg');
+  }else{
+    frame.classList.add('auto');
+  }
+  frame.classList.remove('not-visible');
+  frame.querySelector('p').innerHTML = msg;
+}
+
+
+function closeNotifyAuto(){
+  let frame = document.querySelector('.overlay');
+  if(frame.classList.contains('manual') === false){
+    frame.classList.remove('manual');
+    frame.querySelector('p').innerHTML = "";
+    document.querySelector('.overlay').classList.add('not-visible');
+  }
+
+  if(frame.classList.contains('auto')){
+    frame.classList.remove('auto');
+    frame.querySelector('p').innerHTML = "";
+    document.querySelector('.overlay').classList.add('not-visible');
+  }
+
+
+}
+
+function closeNotify() {
+  let frame = document.querySelector('.overlay');
+  if (frame.classList.contains('manual')) {
+      frame.classList.remove('manual');
+      document.querySelector('.overlay').classList.add('not-visible');
+  }
+  if (!frame.classList.contains('manual')) {
+    document.querySelector('.overlay').classList.add('not-visible');
+  }
+
+}
+
+function accessCamera() {
+
+
+  navigator.getMedia = (navigator.getUserMedia || // use the proper vendor prefix
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia);
+
+  navigator.mediaDevices.getUserMedia({video: true});
+
+}
 
 
 

@@ -10,14 +10,13 @@ for(i=0, len=anchors.length; i<len; i++){
 
 function runDetection(state) {
 
-    Webcam.set({
-      width:'420',
-      height: '300',
-      image_format: 'jpeg',
-      jpeg_quality: 90
-    });
+    // Webcam.set({
+    //   width:'420',
+    //   height: '300',
+    //   image_format: 'jpeg',
+    //   jpeg_quality: 90
+    // });
 
-    Webcam.attach('#my_camera');
 
 
     var kairos = new Kairos("app_id", "app_key");
@@ -33,9 +32,19 @@ function runDetection(state) {
 
       var kairosJSON = JSON.parse(response.responseText);
       console.log(kairosJSON);
-      if (!kairosJSON.images[0].faces[0]) {
+      if (!kairosJSON.images) {
         console.log('no images in face response');
+        document.querySelector('.save-data').classList.add('disabled');
+
+        let msg = "Frame your face and wait for us to recognize it. This can take a few seconds. Make sure there is enough light, do not cover your mouth and make sure that only one person is in the picture.";
+        notify(msg);
+
+
         return;
+      }else{
+
+          closeNotifyAuto();
+          document.querySelector('.save-data').classList.remove('disabled');
       }
 
       document.getElementById("kairos_response").innerHTML = JSON.stringify(
@@ -195,14 +204,12 @@ function runDetection(state) {
       });
     }
 
-    navigator.getMedia = (navigator.getUserMedia || // use the proper vendor prefix
-        navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia ||
-        navigator.msGetUserMedia);
 
-    navigator.getMedia({video: true}, function() {
+
+  let constraints = { audio: false, video: true };
+  navigator.mediaDevices.getUserMedia(constraints).then(function(){
       // webcam is available
-
+      // Webcam.attach('#my_camera');
       console.log(state);
        window.setInterval(function() {
         if(state){
@@ -213,6 +220,11 @@ function runDetection(state) {
 
     }, function() {
       // webcam is not available
+      // let msg = "No camera has been detected. Check your browser settings and reload the page." +
+      //     "This application currently only works when a camera is available. An upload function will be available in the near future. ";
+      // notify(msg);
+
+
     });
 
     const video = document.querySelector('#my_camera video');

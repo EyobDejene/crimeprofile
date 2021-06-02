@@ -46,6 +46,7 @@ nav .navigation li a{
 nav .navigation li:first-child {
   margin-left: 0;
   margin-right: auto;
+
 }
 
 
@@ -54,3 +55,6 @@ nav .navigation li:hover{
   position: relative;
 }
 
+nav .navigation li:first-child:hover {
+  border-bottom: none !important;
+}

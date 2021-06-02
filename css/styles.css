@@ -10,12 +10,9 @@ body {
   color: #fff;
   font-size: 12px; }
 
-main {
-  padding-bottom: 10rem; }
-
 table {
   table-layout: fixed;
-  width: 100%;
+  width: 95%;
   font-family: Dejavu-Regular;
   font-size: 0.65rem;
   text-transform: uppercase; }
@@ -53,6 +50,30 @@ legend {
   padding-top: .5rem;
   padding-bottom: .5rem; }
 
+.close-box {
+  height: auto;
+  width: 100%;
+  position: relative;
+  display: flex; }
+
+.close {
+  position: absolute;
+  height: 1rem;
+  width: 2rem;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.61);
+  font-family: Dejavu-Regular;
+  cursor: pointer;
+  right: -18px;
+  margin-top: -0.5rem;
+  padding-bottom: 1rem; }
+
+.close:hover {
+  border: 1px solid #fff; }
+
 .helper {
   position: absolute;
   height: 1rem;
@@ -69,7 +90,7 @@ legend {
 
 .loader {
   height: auto;
-  width: 60%;
+  width: 20%;
   position: relative;
   margin: auto;
   padding-top: 0rem;
@@ -86,6 +107,40 @@ legend {
 
 .not-visible {
   display: none; }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.2; }
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10; }
+
+.notification {
+  height: 100%;
+  width: 100%; }
+
+.notification-content {
+  width: 35%; }
+
+.notification-content .content {
+  width: 95%; }
+
+.page-loader .loader {
+  width: 40%; }
+
+.page-loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 12; }
+
+.page-loader p {
+  font-family: IBM-Medium; }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -464,6 +519,9 @@ nav .navigation li:hover {
   border-bottom: 2px inset #0500FF;
   position: relative; }
 
+nav .navigation li:first-child:hover {
+  border-bottom: none !important; }
+
 fieldset.box-border {
   border: 1px groove #ddd !important;
   padding: 0 1.4em 1.4em 1.4em !important;
@@ -503,7 +561,7 @@ footer {
 
 #progressbar {
   padding: 0;
-  margin: 0;
+  margin: -10px 0px;
   overflow: hidden;
   color: lightgrey;
   display: flex; }
@@ -515,7 +573,8 @@ footer {
 #progressbar li {
   list-style-type: none;
   width: 25%;
-  position: relative; }
+  position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
 
 #progressbar #step1:after {
   content: ""; }
@@ -540,7 +599,15 @@ footer {
   background: #0500FF; }
 
 #progressbar .current:after {
-  width: 45%; }
+  width: 0%;
+  animation: move 1s normal forwards ease-in-out;
+  animation-delay: 1s; }
+
+@keyframes move {
+  0% {
+    width: 0%; }
+  100% {
+    width: 45%; } }
 
 .progress-bar {
   background-color: #0500FF; }
@@ -567,7 +634,8 @@ table tr .td-value {
   color: #FFD600; }
 
 table tr .td-value-bar {
-  display: flex; }
+  display: flex;
+  display: -webkit-box; }
 
 table tr .td-value-percentage {
   color: #00FF29;
@@ -592,7 +660,8 @@ table .bar {
   color: #00FF29; }
 
 .analyzer__section {
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: .4rem; }
 
 #my_camera {
   position: relative;
@@ -653,10 +722,10 @@ fieldset .content p {
   height: auto; }
 
 .faces .faces-holder .image-holder {
-  padding-bottom: 4rem; }
+  padding-bottom: 2rem; }
 
 .faces-holder {
-  max-height: 50rem;
+  max-height: 79%;
   overflow: auto; }
 
 .faces .image-holder {
@@ -679,3 +748,12 @@ select {
 select option {
   background: transparent;
   -webkit-appearance: none; }
+
+.faces .helper-box {
+  padding-bottom: 1.5rem; }
+
+.data .content h1 {
+  font-family: IBM-Medium; }
+
+.data .content p {
+  font-family: IBM-Medium; }

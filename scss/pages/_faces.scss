@@ -21,12 +21,13 @@
   width: 100%;
   height: auto;
 }
+
 .faces .faces-holder .image-holder{
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .faces-holder{
-  max-height: 50rem;
+  max-height: 79%;
   overflow: auto;
 
 }
@@ -62,4 +63,8 @@ select{
 select option {
   background: transparent;
   -webkit-appearance: none;
+}
+
+.faces .helper-box{
+  padding-bottom: 1.5rem;
 }

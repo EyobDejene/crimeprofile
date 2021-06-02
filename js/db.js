@@ -1,6 +1,8 @@
 
 function saveData(gender,age_cat,age,ethnicity,image) {
-  var jsondata = {
+
+
+  let jsondata = {
 
     "gender": gender,
     "age_cat": age_cat,
@@ -9,7 +11,9 @@ function saveData(gender,age_cat,age,ethnicity,image) {
     "image": image,
   };
 
-  var settings = {
+
+
+  $.ajax({
     "async": true,
     "crossDomain": true,
     "url": "https://mugshots-fb45.restdb.io/rest/face",
@@ -20,14 +24,30 @@ function saveData(gender,age_cat,age,ethnicity,image) {
       "cache-control": "no-cache"
     },
     "processData": false,
-    "data": JSON.stringify(jsondata)
-  }
+    "data": JSON.stringify(jsondata),
+    beforeSend: function(){
+      // Show image container
+      console.log('loading');
+     // document.querySelector('.loader').classList.remove('not-visible');
 
-  $.ajax(settings).done(function(response) {
-    console.log(response);
-    window.location = '/faces.html';
+    },
+    success: function(response) {
+      console.log('saved data');
+      window.location = '/faces.html';
+    },
+    complete:function(data) {
+
+    }
+
   });
+
+
 }
+
+
+
+
+
 
 
 
@@ -50,34 +70,45 @@ function getFaces(gender,age_cat,age,ethnicity){
     beforeSend: function(){
       // Show image container
       console.log('loading');
-      document.querySelector('.loader').classList.remove('not-visible');
+      document.querySelector('.faces-holder .loader').classList.remove('not-visible');
 
     },
      success: function(response) {
+
       if (response.length > 0) {
         // asc based on age
         console.log(response)
-        let sortedData = response.sort(function(a, b) {
+        let sortedData = response.slice(0, -1);
+
+        sortedData = sortedData.sort(function(a, b) {
           return a.age - b.age;
         });
 
-        for (obj in sortedData) {
-          console.log(obj);
-          $('#face-objects').append("" +
-              "<div class='col-2 mugshots'>" +
-              "<div class='image-holder'>" +
-              "<img src=" + "'" + sortedData[obj].image + "'/>" +
-              "</div>" +
-              "</div>");
+
+        if (sortedData.length > 0) {
+          for (obj in sortedData) {
+            console.log(obj);
+            $('#face-objects').append("" +
+                "<div class='col-2 mugshots'>" +
+                "<div class='image-holder'>" +
+                "<img src=" + "'" + sortedData[obj].image + "'/>" +
+                "</div>" +
+                "</div>");
+          }
+        } else {
+          $('#face-objects').
+              append("<p>No faces where found in the database..</p>");
         }
-      } else {
-        $('#face-objects').append("<p>No faces where found in the database..</p>");
+      }else{
+        $('#face-objects').
+            append("<p>No faces where found in the database..</p>");
       }
+
     },
     complete:function(data){
       // Hide image container
       console.log('completed');
-      document.querySelector('.loader').classList.add('not-visible');
+      document.querySelector('.faces-holder .loader').classList.add('not-visible');
     }
   });
 }

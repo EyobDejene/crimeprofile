@@ -28,6 +28,32 @@
 
 <body data-barba="wrapper">
 
+
+<div class="page-loader">
+  <div class="notification d-flex align-items-center justify-content-center">
+    <div class="notification-content">
+      <div class="loader"><img src="img/loader9.gif"><p>Connecting to API services...</p></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="overlay not-visible">
+  <div class="notification d-flex align-items-center justify-content-center">
+    <div class="notification-content">
+      <fieldset class="box-border">
+        <legend class="box-border">>_Notification</legend>
+        <div class="close-box" onclick="closeNotify()">
+          <div class="close">x</div>
+        </div>
+        <div class="content pt-4 pb-3">
+         <p></p>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
   <main data-barba="container" data-barba-namespace="analyzer" data-title="analyzer">
 
     <div class="container">
@@ -37,9 +63,9 @@
           <div class="col-12">
             <nav>
               <ul class="navigation">
-                <li><a href="">>_Catch your <br>Crime Profile</a></li>
-                <li><a href="">>_Data usage</a></li>
-                <li><a href="">>_About</a></li>
+                <li><a href="/">>_Catch your <br>Crime Profile</a></li>
+                <li><a href="/datausage">>_Data usage</a></li>
+                <li><a href="/about">>_About</a></li>
               </ul>
             </nav>
           </div>
@@ -65,7 +91,11 @@
               <fieldset class="box-border">
                 <legend class="box-border">>_Features</legend>
                 <div class="helper-box">
-                  <div class="helper">?</div>
+                  <div class="helper"   data-msg="
+                  Based on your facial characteristics, the system tries classify your gender, age and ethnicity with a confidence score.
+                  The confidence score is a number between 0 and 100. A score of 100 is likely an exact match, while a score of 0 means, that no matching answer was found. The higher the score the greater the confidence in the answer.
+                  "
+                  >?</div>
                 </div>
 
                 <div class="content">
@@ -142,8 +172,9 @@
               <fieldset class="box-border">
                 <legend class="box-border">>_Crime profile</legend>
                 <div class="helper-box">
-                  <div class="helper">?</div>
-                </div>
+                  <div class="helper"   data-msg="Graph">?</div>
+
+                  </div>
                 <div class="content chart">
                   <p>
                     <!--Met jou uiterlijke kenmerken behoor je tot een groep waarvan-->
@@ -165,8 +196,8 @@
                     <!--Met jou uiterlijke kenmerken behoor je tot een groep waarvan tussen 2014 en 2015 <span class="risk-percentage">46%</span> een <span class="crime-category">vermogensmisdrijf</span> heeft gepleegd.-->
                   </p>
                   <!--<div id="my_dataviz"></div>-->
-                  <canvas id="myChart" class="pb-3" width="400" height="350"></canvas>
-                  <a class="cta save-data" href="javascript:;" onclick="snapData(); return false;">View similar faces</a>
+                  <canvas id="myChart" class="pb-3" width="100vw" height="100vw"></canvas>
+                  <a class="cta save-data disabled" href="javascript:;" onclick="snapData(); return false;">View similar faces</a>
                 </div>
 
               </fieldset>
@@ -180,15 +211,15 @@
         </div>
         <!-- End container -->
 
-        <!--<div class="container utility">-->
-          <!--<div class="col-2">-->
-            <!--<table>-->
-              <!--<tr><td>Session</td><td>:</td><td><span class="session">UNI43535</span></td></tr>-->
-              <!--<tr><td>User id</td><td>:</td><td><span class="user_id">#2023032</span> </td></tr>-->
-              <!--<tr><td>Duration</td><td>:</td><td><span class="duration">00:2:34</span></td></tr>-->
-            <!--</table>-->
-          <!--</div>-->
-        <!--</div>-->
+        <div class="container utility">
+          <div class="col-2">
+            <table>
+              <tr><td>Session</td><td>:</td><td><span class="session">UNI43535</span></td></tr>
+              <tr><td>User id</td><td>:</td><td><span class="user_id">#2023032</span> </td></tr>
+              <tr><td>Duration</td><td>:</td><td><span class="duration">00:00:00</span></td></tr>
+            </table>
+          </div>
+        </div>
 
 
       </section>
@@ -204,14 +235,18 @@
     <footer>
       <div id="bar">
         <ul id="progressbar">
-          <li class="active" id="step1"><a href="index.html">Introduction</a> </li>
-          <li class="active current" id="step2"><a href="analyzer.html"> Crime PROFILE</a></li>
-          <li id="step3"><a href="faces.html"> View similar faces</a></li>
-          <li id="step4"><a href=""> Step 4</a></li>
+          <li class="active" id="step1"><a href="/">Introduction</a> </li>
+          <li class="active current" id="step2"><a href="/analyzer.html"> Crime PROFILE</a></li>
+          <li id="step3"><a href="/faces.html"> View similar faces</a></li>
+          <li id="step4"><a href="/data.html"> Data usage</a></li>
         </ul>
       </div>
     </footer>
   </footer>
+
+
+
+
 
 
 </body>
@@ -228,8 +263,7 @@
 <script src="js/barba.core.js"></script>
 <script src="js/gsap.min.js"></script>
 
-<!-- project script -->
-<script async src="js/app.js"></script>
+
 
 
 <!-- chartjs -->
@@ -241,5 +275,11 @@
 <script src="https://mugshots-fb45.restdb.io/rest/_jsapi.js"></script>
 
 <script src="js/db.js"></script>
+<script src="js/timer.js"></script>
+
+
+<!-- project script -->
+<script async src="js/app.js"></script>
+<script src="js/cameraAvailablity.js"></script>
 
 </html>

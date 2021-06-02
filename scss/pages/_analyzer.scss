@@ -20,6 +20,8 @@ table tr .td-value{
 
 table tr .td-value-bar{
   display: flex;
+  display: -webkit-box;
+
 
 }
 
@@ -56,6 +58,7 @@ table .bar{
 
 .analyzer__section{
   overflow: hidden;
+  padding-top: .4rem;
 }
 
 #my_camera{

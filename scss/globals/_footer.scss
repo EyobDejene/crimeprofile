@@ -31,7 +31,7 @@ footer{
 
 #progressbar {
   padding: 0;
-  margin: 0;
+  margin: -10px 0px;
   overflow: hidden;
   color: lightgrey;
   display: flex;
@@ -47,6 +47,7 @@ footer{
   list-style-type: none;
   width: 25%;
   position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 
@@ -84,11 +85,21 @@ footer{
 #progressbar li.active:before,
 #progressbar li.active:after {
   background: $darkblue;
-
 }
 
 #progressbar .current:after{
-  width: 45%;
+  width: 0%;
+  animation: move 1s normal forwards ease-in-out;
+  animation-delay: 1s;
+}
+
+@keyframes move {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 45%;
+  }
 }
 
 
