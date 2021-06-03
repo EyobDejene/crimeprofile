@@ -139,7 +139,7 @@ function recognizer() {
       runDetection(true);
     }, function() {
       // webcam is not available
-      let msg = "A camera has been detected. Check the browser settings and Allow camera access to use realtime recognition within the application. After allowing access to the camera you will need to refresh the page.";
+      let msg = "A camera has been detected. Check the browser settings and allow camera access to use real-time face recognition within the application. After allowing access you will need to refresh the page.";
       notify(msg);
     });
 

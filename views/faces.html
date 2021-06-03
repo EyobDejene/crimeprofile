@@ -272,10 +272,10 @@
     let age = ageChecker(localStorage.getItem('age'));
     let ethnicity = localStorage.getItem('ethnicity');
 
-    if (image !== '' && gender !== '' && age_cat !== '' && age !== '' && ethnicity !== '') {
+    if (image === null || gender === null || age_cat === null || age === null || ethnicity === null) {
 
       document.querySelector('.faces').style.display = 'none';
-      notify('To view this page you need to scan your face first');
+      notify('To view this page you will need to analyze your face first.');
       setTimeout(function() {
         window.location = '/analyzer.html';
       }, 5000);
@@ -328,110 +328,112 @@
       }
     }
 
-    function getAges() {
-      let ageSelection = document.querySelector('#ageSelection');
-      for (let i = 12; i < 100; i++) {
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        ageSelection.appendChild(opt);
-
-        // ageSelection.append('<option value="'+i+'">'+i+'</option>');
-      }
-
-      addSelected('ageSelection', localStorage.getItem('age'));
-    }
-
-    function updateChart() {
-      let gender = document.querySelector('#genderSelection').value;
-      let age = document.querySelector('#ageSelection').value;
-      let ethnicity = document.querySelector('#ethnicitySelection').value;
-
-      ageChecker(age);
-
-      console.log(gender);
-      console.log(ageChecker(age));
-      console.log(ethnicity);
-
-      if (ethnicity == "white") {
-        let ethnicity = "dutch background";
-        getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json', ageChecker(age), gender);
-        document.querySelector('.gender-category').innerHTML = gender;
-        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
-
-      } else if (ethnicity == "black") {
-        let ethnicity = "migration background";
-        getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
-        document.querySelector('.gender-category').innerHTML = gender;
-        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
-
-      } else if (ethnicity == "asian") {
-        let ethnicity = "non-western migration background";
-        getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
-        document.querySelector('.gender-category').innerHTML = gender;
-        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
-
-      } else if (ethnicity == "hispanic") {
-        let ethnicity = "western migration background";
-        getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
-        document.querySelector('.gender-category').innerHTML = gender;
-        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
-
-      } else if (ethnicity == "other") {
-        let ethnicity = "unknown migration background";
-        getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
-        document.querySelector('.gender-category').innerHTML = gender;
-        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
-
-      }
-
-      getFaces(gender, ageChecker(age), age, ethnicity)
-
-    }
-
-    function between(x, min, max) {
-      return x >= min && x <= max;
-    }
-
-    function ageChecker(age) {
-      if (between(age, 12, 18)) {
-        age = "12-18";
-        document.querySelector('.age-category').innerHTML = age;
-      } else if (between(age, 18, 25)) {
-        age = "18-25";
-        document.querySelector('.age-category').innerHTML = age;
-      } else if (between(age, 25, 45)) {
-        age = "25-45";
-        document.querySelector('.age-category').innerHTML = age;
-      } else if (between(age, 45, 65)) {
-        age = "45-65";
-        document.querySelector('.age-category').innerHTML = age;
-      } else if (age >= 65) {
-        age = "65-65+";
-        document.querySelector('.age-category').innerHTML = age;
-      }
-      return age;
-    }
-
-    function addSelected(element, value) {
-      let select = document.getElementById(element);
-      let option;
-
-      for (let i = 0; i < select.options.length; i++) {
-        option = select.options[i];
-
-        if (option.value == value) {
-
-          // or
-          // if (option.text == 'Malaysia') {
-          option.selected = 'selected';
-          return;
-        }
-      }
-    }
 
   });
 
+
+  function getAges() {
+    let ageSelection = document.querySelector('#ageSelection');
+    for (let i = 12; i < 100; i++) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.innerHTML = i;
+      ageSelection.appendChild(opt);
+
+      // ageSelection.append('<option value="'+i+'">'+i+'</option>');
+    }
+
+    addSelected('ageSelection', localStorage.getItem('age'));
+  }
+
+
+  function between(x, min, max) {
+    return x >= min && x <= max;
+  }
+
+  function ageChecker(age) {
+    if (between(age, 12, 18)) {
+      age = "12-18";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 18, 25)) {
+      age = "18-25";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 25, 45)) {
+      age = "25-45";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 45, 65)) {
+      age = "45-65";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (age >= 65) {
+      age = "65-65+";
+      document.querySelector('.age-category').innerHTML = age;
+    }
+    return age;
+  }
+
+  function addSelected(element, value) {
+    let select = document.getElementById(element);
+    let option;
+
+    for (let i = 0; i < select.options.length; i++) {
+      option = select.options[i];
+
+      if (option.value == value) {
+
+        // or
+        // if (option.text == 'Malaysia') {
+        option.selected = 'selected';
+        return;
+      }
+    }
+  }
+
+  function updateChart() {
+    let gender = document.querySelector('#genderSelection').value;
+    let age = document.querySelector('#ageSelection').value;
+    let ethnicity = document.querySelector('#ethnicitySelection').value;
+
+    ageChecker(age);
+
+    console.log(gender);
+    console.log(ageChecker(age));
+    console.log(ethnicity);
+
+    if (ethnicity == "white") {
+      let ethnicity = "dutch background";
+      getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "black") {
+      let ethnicity = "migration background";
+      getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "asian") {
+      let ethnicity = "non-western migration background";
+      getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "hispanic") {
+      let ethnicity = "western migration background";
+      getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "other") {
+      let ethnicity = "unknown migration background";
+      getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }
+
+    getFaces(gender, ageChecker(age), age, ethnicity)
+
+  }
 
 
 

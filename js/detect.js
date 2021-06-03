@@ -215,7 +215,7 @@ function runDetection(state) {
         if(state){
           snap();
         }
-      }, 18000);
+      }, 6000);
 
 
     }, function() {
