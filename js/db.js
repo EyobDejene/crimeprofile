@@ -28,12 +28,18 @@ function saveData(gender,age_cat,age,ethnicity,image) {
     beforeSend: function(){
       // Show image container
       console.log('loading');
-     // document.querySelector('.loader').classList.remove('not-visible');
+      document.querySelector('.page-loader').classList.remove('not-visible');
+      document.querySelector('.page-loader').style.opacity=1;
+      document.querySelector('.page-loader').style.display='block';
+      document.querySelector('.page-loader .loader p').innerHTML = "Adding your face into the database...";
 
     },
     success: function(response) {
       console.log('saved data');
-      window.location = '/faces.html';
+      setTimeout(function() {
+        window.location = '/faces.html';
+      },2000)
+
     },
     complete:function(data) {
 

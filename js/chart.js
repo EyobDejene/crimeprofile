@@ -2,7 +2,6 @@ let ctx = document.getElementById('myChart').getContext('2d');
 
 var myChart = new Chart(ctx, {
 
-  responsive: true,
 
   type: 'bar',
   data: {

@@ -25,6 +25,9 @@ fieldset .content {
 fieldset .content p {
   padding-bottom: 1rem; }
 
+.notification .content p {
+  padding-bottom: 0rem; }
+
 legend {
   font-family: Dejavu-Regular;
   text-transform: uppercase; }
@@ -38,7 +41,9 @@ legend {
   font-size: 0.85rem;
   color: #00FF29;
   text-transform: uppercase;
-  font-family: IBM-Medium; }
+  font-family: IBM-Medium;
+  width: 100%;
+  background-color: transparent; }
 
 .cta:hover {
   color: #000000;
@@ -68,7 +73,7 @@ legend {
   font-family: Dejavu-Regular;
   cursor: pointer;
   right: -18px;
-  margin-top: -0.5rem;
+  margin-top: -0.45rem;
   padding-bottom: 1rem; }
 
 .close:hover {
@@ -141,6 +146,22 @@ legend {
 
 .page-loader p {
   font-family: IBM-Medium; }
+
+.chart-wrapper {
+  position: relative;
+  width: 100%; }
+
+.notification-content a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 0.5rem 0rem;
+  border: solid 1px rgba(255, 255, 255, 0.61);
+  color: #fff; }
+
+.notification-content a:hover {
+  background-color: #fff;
+  color: #000; }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -528,7 +549,7 @@ fieldset.box-border {
   margin: 0 0 1.5em 0 !important; }
 
 legend.box-border {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
   font-weight: bold !important;
   text-align: left !important;
   width: auto;
@@ -572,7 +593,7 @@ footer {
 
 #progressbar li {
   list-style-type: none;
-  width: 25%;
+  width: 33.3333%;
   position: relative;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
 
@@ -585,13 +606,10 @@ footer {
 #progressbar #step3:after {
   content: ""; }
 
-#progressbar #step4:after {
-  content: ""; }
-
 #progressbar li:after {
   display: block;
   color: #ffffff;
-  margin: 10px 0px 10px;
+  margin: 10px 0px 1px;
   padding: .5rem; }
 
 #progressbar li.active:before,
@@ -609,8 +627,15 @@ footer {
   100% {
     width: 45%; } }
 
+#progressbar .last:after {
+  width: 100%; }
+
 .progress-bar {
   background-color: #0500FF; }
+
+#progressbar li a:hover {
+  color: #fff !important;
+  opacity: 1; }
 
 figure img {
   width: 100%;
@@ -702,7 +727,7 @@ fieldset .content p {
   font-size: 0.65rem; }
 
 .content .image-holder {
-  height: 5rem;
+  height: auto;
   width: 100%;
   position: relative;
   padding-bottom: 1rem; }
@@ -725,7 +750,7 @@ fieldset .content p {
   padding-bottom: 2rem; }
 
 .faces-holder {
-  max-height: 79%;
+  max-height: 34rem;
   overflow: auto; }
 
 .faces .image-holder {
@@ -752,8 +777,8 @@ select option {
 .faces .helper-box {
   padding-bottom: 1.5rem; }
 
-.data .content h1 {
+.faq .content h1 {
   font-family: IBM-Medium; }
 
-.data .content p {
+.faq .content p {
   font-family: IBM-Medium; }

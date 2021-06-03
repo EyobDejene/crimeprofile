@@ -41,6 +41,10 @@ fieldset .content p{
   padding-bottom: 1rem;
 }
 
+.notification .content p{
+  padding-bottom: 0rem;
+}
+
 legend{
   font-family: Dejavu-Regular;
   text-transform: uppercase;
@@ -58,6 +62,9 @@ legend{
   color: $green;
   text-transform: uppercase;
   font-family: IBM-Medium;
+  width: 100%;
+  background-color: transparent;
+
 }
 
 .cta:hover{
@@ -91,7 +98,7 @@ legend{
   font-family: Dejavu-Regular;
   cursor: pointer;
   right: -18px;
-  margin-top:-0.5rem;
+  margin-top:-0.45rem;
   padding-bottom: 1rem;
 
 }
@@ -183,4 +190,23 @@ legend{
 
 .page-loader p{
   font-family: IBM-Medium;
+}
+
+.chart-wrapper{
+  position: relative;
+  width: 100%;
+}
+
+.notification-content a{
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 0.5rem 0rem;
+  border: solid 1px $white;
+  color:$white_white;
+}
+
+.notification-content a:hover{
+  background-color: $white_white;
+  color: $black-b;
 }

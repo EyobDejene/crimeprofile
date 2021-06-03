@@ -23,7 +23,7 @@ barba.init({
             // .to('nav a', {opacity: 1, stagger: .1, y: '0%', delay: .15}, 0)
             // .to('.github-button-section', {opacity: 1, y: '0%', duration: 1}, 0)
            .from('.page', {opacity: 0})
-           .to('.page', {opacity: 1,  ease: 'power4.in', duration: 2})
+           .to('.page', {opacity: 1,  ease: 'power4.in', duration: 1})
            .from('.page-loader',{opacity:1})
            .to('.page-loader',{opacity:0,ease: 'power4.in', duration: 0})
               .to('.page-loader',{display:'none',ease: 'power4.in', duration: 1})
@@ -47,7 +47,7 @@ barba.init({
             // .from(next.container, {opacity: 0, y: 50})
             // .to(next.container, {opacity: 1, y: 0, ease: 'power4.out', duration: .25});
               .from('.page', {opacity: 0, ease: 'power4.out', duration: 1})
-              .to('.page', {opacity: 1, ease: 'power4.in', duration: 2});
+              .to('.page', {opacity: 1, ease: 'power4.in', duration: 1});
         });
 
 
@@ -120,16 +120,31 @@ for(let i =0; i < helper.length; i++){
   helper[i].addEventListener('click', notify);
 }
 
+let button = document.querySelectorAll('.buttonOptions');
+for(let i =0; i < button.length; i++){
+  button[i].addEventListener('click', notify);
+}
+
 
 
 
 function notify(msg){
   let frame = document.querySelector('.overlay');
   frame.querySelector('p').innerHTML = "";
+  if(msg.path) {
+    let options = msg.path[0].classList.contains('save-data');
+    if (options) {
+      frame.querySelector('.options').classList.remove('not-visible');
+    }
+  }
+
   if(msg.type == "click"){
     frame.classList.add('manual');
     msg = msg.srcElement.getAttribute('data-msg');
+
+
   }else{
+    frame.querySelector('.options').classList.add('not-visible');
     frame.classList.add('auto');
   }
   frame.classList.remove('not-visible');
@@ -166,18 +181,17 @@ function closeNotify() {
 
 }
 
-function accessCamera() {
 
 
-  navigator.getMedia = (navigator.getUserMedia || // use the proper vendor prefix
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia);
-
-  navigator.mediaDevices.getUserMedia({video: true});
-
-}
-
-
-
+$(window).load(function() {
+  $( window ).resize(function() {
+    if($('#myChart')) {
+      //let width =  $('#myChart').css('width');
+      let width = $('#myChart').closest('.content').css('width');
+      console.log(width)
+      $('#myChart').css('width', '100%');
+      $('#myChart').css('height', 'auto');
+    }
+  });
+});
 

@@ -215,7 +215,7 @@ function runDetection(state) {
         if(state){
           snap();
         }
-      }, 8000);
+      }, 18000);
 
 
     }, function() {
@@ -244,36 +244,46 @@ function runDetection(state) {
       )
     }
 
+
     video.addEventListener('play', () => {
       const canvas = faceapi.createCanvasFromMedia(video);
-      video.parentNode.insertBefore(canvas, video.nextSibling);
 
-      const displaySize = {width: video.offsetWidth, height: video.offsetHeight}
+        video.parentNode.insertBefore(canvas, video.nextSibling);
+        // console.log('node maded');
+        // console.log(video.querySelectorAll('canvas').length)
+        //canvas.parentNode.insertBefore(video, canvas.nextSibling);
+        // let videoElements = document.querySelectorAll('video').length;
+        //video.insertBefore(canvas,video.nextSibling);
+        //  video.parentNode.insertBefore(canvas, video.childNodes[0]);
 
-      faceapi.matchDimensions(canvas, displaySize);
+        const displaySize = {
+          width: video.offsetWidth,
+          height: video.offsetHeight
+        }
 
-      setInterval(async () => {
-        const detections = await faceapi.detectAllFaces(video,
-            new faceapi.TinyFaceDetectorOptions()).
-            withFaceLandmarks().
-            withFaceExpressions()
-        const resizedDetections = faceapi.resizeResults(detections,
-            displaySize);
+        faceapi.matchDimensions(canvas, displaySize);
 
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+        setInterval(async () => {
+          const detections = await faceapi.detectAllFaces(video,
+              new faceapi.TinyFaceDetectorOptions()).
+              withFaceLandmarks().
+              withFaceExpressions()
+          const resizedDetections = faceapi.resizeResults(detections,
+              displaySize);
 
-        const options = { boxColor: "#ff0018" }
-        //console.log(resizedDetections);
-        // new faceapi.draw.DrawFaceLandmarks(resizedDetections.landmarks, options).draw(canvas)
-        //faceapi.draw.drawDetections(resizedDetections,options).draw(canvas);
-        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        faceapi.draw.drawDetections(canvas,resizedDetections)
+          canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 
+          //console.log(resizedDetections);
+          // new faceapi.draw.DrawFaceLandmarks(resizedDetections.landmarks, options).draw(canvas)
+          //faceapi.draw.drawDetections(resizedDetections,options).draw(canvas);
+          faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+          faceapi.draw.drawDetections(canvas, resizedDetections)
 
-        //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-      }, 200);
-      return false;
+          //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+        }, 200);
+        return false;
     });
+
 
 
 }
@@ -282,8 +292,7 @@ function runDetection(state) {
 
 
 
-function snapData(){
-
+function snapData(state){
 
   Webcam.snap(function(data_uri) {
 
@@ -299,9 +308,18 @@ function snapData(){
     localStorage.setItem('ethnicity', ethnicity);
 
 
-    saveData(gender,age_cat,age,ethnicity,data_uri)
+    if(state){
+      saveData(gender,age_cat,age,ethnicity,data_uri)
+    }else{
+      window.location = '/faces.html';
+    }
 
   });
+
+
+
+
+
 
 }
 
