@@ -7,6 +7,7 @@ footer{
   position: fixed;
   bottom:0;
   margin: 0;
+  opacity: 0.9;
 }
 
 #bar {
@@ -19,29 +20,36 @@ footer{
 }
 
 #progressbar li a{
-  color: $white;
+  color: rgba(255, 255, 255, 0.5);
   font-family: IBM-Medium;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.5;
+
 }
 
 #progressbar {
   padding: 0;
-  margin: 0;
+  margin: -10px 0px;
   overflow: hidden;
   color: lightgrey;
   display: flex;
 
 }
 
-#progressbar .active {
-  color: $white;
+#progressbar .active a {
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
 }
+
+
 
 #progressbar li {
   list-style-type: none;
-  width: 25%;
+  width: 33.3333%;
   position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 
@@ -58,9 +66,9 @@ footer{
   content: "";
 }
 
-#progressbar #step4:after {
-  content: "";
-}
+//#progressbar #step4:after {
+//  content: "";
+//}
 
 
 
@@ -70,8 +78,8 @@ footer{
 
   display: block;
   color: #ffffff;
-  background: $lightblack;
-  margin: 10px auto 0 auto;
+  //background: $lightblack;
+  margin: 10px 0px 1px;
   padding: .5rem;
 }
 
@@ -81,7 +89,32 @@ footer{
   background: $darkblue;
 }
 
+#progressbar .current:after{
+  width: 0%;
+  animation: move 1s normal forwards ease-in-out;
+  animation-delay: 1s;
+}
+
+@keyframes move {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 45%;
+  }
+}
+#progressbar .last:after{
+  width: 100%;
+}
+
 
 .progress-bar {
   background-color: $darkblue;
+}
+
+
+
+#progressbar li a:hover{
+  color: $white_white!important;
+  opacity: 1;
 }

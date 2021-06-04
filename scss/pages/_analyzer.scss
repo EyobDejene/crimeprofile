@@ -20,6 +20,8 @@ table tr .td-value{
 
 table tr .td-value-bar{
   display: flex;
+  display: -webkit-box;
+
 
 }
 
@@ -56,26 +58,60 @@ table .bar{
 
 .analyzer__section{
   overflow: hidden;
+  padding-top: .4rem;
 }
 
 #my_camera{
   position: relative;
+  overflow: hidden!important;
   /*box-shadow: -50px 0px 80px 90px rgba(0,0,0,0.9) inset;*/
 }
 
 
-canvas{
-  position: relative;
+#my_camera canvas{
+  position: absolute;
+  left: 0;
   z-index: 1;
+  width: auto!important;
 }
 
 
 video{
-  position: absolute;
+  position: relative;
   z-index: 0;
-
+  //padding-top: .6rem;
   -webkit-filter: grayscale(1);
   filter: grayscale(100%);
-
 }
+
+video .red_dot{
+  background-color: #FF1313;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  right:0;
+}
+
+
+
+.risk-percentage,
+.age-category{
+  color:$green;
+}
+
+.crime-category,
+.ethnicity-category,
+.gender-category
+{
+  color:$yellow;
+}
+
+
+
+fieldset .content p{
+  font-size: 0.65rem;
+}
+
 

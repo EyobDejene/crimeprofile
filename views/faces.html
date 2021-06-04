@@ -1,0 +1,442 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Catch Your Crime Profile</title>
+
+
+  <!-- bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap-grid.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+  <!-- style -->
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <!-- load jquery for kairos -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- load face api -->
+  <script defer src="js/face-api.min.js"></script>
+  <!-- load kairos api -->
+  <script src="js/kairos.js"></script>
+
+
+
+
+</head>
+
+
+<body data-barba="wrapper">
+
+<div class="page-loader">
+  <div class="notification d-flex align-items-center justify-content-center">
+    <div class="notification-content">
+      <div class="loader"><img src="img//loader9.gif"><p>Connecting with database..</p></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="overlay not-visible">
+  <div class="notification d-flex align-items-center justify-content-center">
+    <div class="notification-content">
+      <fieldset class="box-border">
+        <legend class="box-border">>_Notification</legend>
+        <div class="close-box" onclick="closeNotify()">
+          <div class="close">x</div>
+        </div>
+        <div class="content pt-4 pb-3">
+          <p></p>
+          <div class="row options not-visible">
+            <div class="col-6">
+              <button class="disagree cta">Disagree</button>
+            </div>
+            <div class="col-6">
+              <button class="agree cta">Agree</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+
+  <main data-barba="container" data-barba-namespace="faces" data-title="faces">
+
+    <div class="container">
+      <header>
+        <!-- start row -->
+        <div class="row ">
+          <div class="col-12">
+            <nav>
+              <ul class="navigation">
+                <li><a href="index.html">>_Catch your <br>Crime Profile</a></li>
+                <li><a href="about.html">>_About</a></li>
+                <li><a href="faq.html">>_Faq</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- end row -->
+      </header>
+    </div>
+
+
+
+
+    <article class="faces page">
+      <section class="faces_section">
+        <!-- start container -->
+        <div class="container d-flex justify-content-center align-self-center">
+
+          <!-- start row -->
+          <div class="row ">
+
+            <!-- start column 1 -->
+            <div class="col-xxl-4 col-xl-6  col-md-12">
+
+              <fieldset class="box-border">
+                <legend class="box-border">>_Your profile</legend>
+                <div class="helper-box">
+                  <div class="helper" data-msg="This is your crime profile which is based on your facial features. You can change your gender, age, and ethnicity to see how it effects the results.">?</div>
+                </div>
+
+                <div class="content chart">
+                  <div class="row">
+                    <div class="col-4">
+                      <a href="analyzer.html">
+                      <div class="image-holder">
+                        <img src="">
+                      </div>
+                      </a>
+                    </div>
+
+                    <div class="col-8">
+                      <div class="features">
+                        <table>
+                          <tr>
+                            <td>$Gender:</td>
+                            <td>
+                              <select id="genderSelection" onchange="updateChart()">
+                                <option value="males">Male</option>
+                                <option  value="females">Female</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>$Age:</td>
+                            <td>
+                              <select id="ageSelection" onchange="updateChart()">
+
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>$Ethnicity:</td>
+                            <td>
+                              <select id="ethnicitySelection" onchange="updateChart()">
+                                <option value="white">White</option>
+                                <option value="black">Black</option>
+                                <option value="asian">Asian</option>
+                                <option value="hispanic">Hispanic</option>
+                                <option value="other">Other</option>
+                              </select>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="col-8 col-xxl-12">
+                      <p>
+                        <!--Met jou uiterlijke kenmerken behoor je tot een groep waarvan-->
+                        <!--<span class="risk-percentage">&#45;&#45;%</span> van de <span class="gender-category">...</span>-->
+                        <!--tussen de  <span class="age-category">... jaar</span> met een-->
+                        <!--<span class="ethnicity-category">...</span> in Nederland-->
+                        <!--is aangehouden voor het plegen van een <span class="crime-category">...</span>.-->
+
+
+                        Based on the facial features, this face represents a group of
+                        <span class="gender-category">...</span>
+                        between the ages of <span class="age-category">...</span>
+                        with a <span class="ethnicity-category">...</span>
+                        where <span class="risk-percentage">&#45;&#45;%</span>
+                        have been arrested for committing <span class="crime-category">...</span> in The Netherlands.
+
+
+
+                        <!--Met jou uiterlijke kenmerken behoor je tot een groep waarvan tussen 2014 en 2015 <span class="risk-percentage">46%</span> een <span class="crime-category">vermogensmisdrijf</span> heeft gepleegd.-->
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <!--<div id="my_dataviz"></div>-->
+                  <canvas id="myChart" class="pb-3" width="100vw" height="95vw"></canvas>
+                  <!--<a class="cta" href="">View similar faces</a>-->
+                </div>
+              </fieldset>
+
+            </div>
+            <!-- end column 1 -->
+            <!--<div class="col-1"></div>-->
+
+
+
+            <!-- start column 3 -->
+            <div class="col-xxl-8 col-xl-6 col-md-12">
+              <fieldset class="box-border">
+                <legend class="box-border">>_Faces with similar profile</legend>
+                <div class="helper-box">
+                  <div class="helper"  data-msg="Based on your crime profile the system will find similar faces in database with the same crime profiles. The mugshots are sorted by age from young to old">?</div>
+                </div>
+                <div class="content faces-holder">
+                  <div class="loader not-visible"><img src="img//loader9.gif"><p>Loading mugshots..</p></div>
+                  <div class="row"  id="face-objects">
+
+                  </div>
+                </div>
+
+              </fieldset>
+
+            </div>
+            <!-- end column 3 -->
+
+          </div>
+          <!-- end row -->
+
+        </div>
+        <!-- End container -->
+
+        <!--<div class="container utility">-->
+          <!--<div class="col-2">-->
+            <!--<table>-->
+              <!--<tr><td>Session</td><td>:</td><td><span class="session">UNI43535</span></td></tr>-->
+              <!--<tr><td>User id</td><td>:</td><td><span class="user_id">#2023032</span> </td></tr>-->
+              <!--<tr><td>Duration</td><td>:</td><td><span class="duration">00:2:34</span></td></tr>-->
+            <!--</table>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+      </section>
+    </article>
+
+
+
+  </main>
+
+
+
+    <footer>
+      <div id="bar">
+        <ul id="progressbar">
+          <li class="active" id="step1"><a href="index.html">Introduction</a> </li>
+          <li class="active" id="step2"><a href="analyzer.html"> Face analyzer</a></li>
+          <li class="active last" id="step3"><a href="faces.html">Mugshot database</a></li>
+          <!--<li id="step4"><a href="/faq.html"> FAQ</a></li>-->
+        </ul>
+      </div>
+    </footer>
+
+
+
+</body>
+
+
+
+
+
+<!-- barbare page transitions -->
+<script src="js/barba.core.js"></script>
+<script src="js/gsap.min.js"></script>
+
+<!-- project script -->
+<script async src="js/app.js"></script>
+
+
+<!-- chartjs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/db.js"></script>
+<script src="js/detect.js"></script>
+
+<script async>
+
+  window.addEventListener('load', function() {
+    let image = localStorage.getItem('image');
+    let gender = localStorage.getItem('gender');
+    let age_cat = localStorage.getItem('age_cat');
+    let age = ageChecker(localStorage.getItem('age'));
+    let ethnicity = localStorage.getItem('ethnicity');
+
+    if (image === null || gender === null || age_cat === null || age === null || ethnicity === null) {
+
+      document.querySelector('.faces').style.display = 'none';
+      notify('To view this page you will need to analyze your face first.');
+      setTimeout(function() {
+        window.location = 'analyzer.html';
+      }, 5000);
+
+    }
+
+    getFaces(gender, age_cat, localStorage.getItem('age'), ethnicity);
+
+    getData(gender, age, ethnicity);
+    getAges();
+
+    if (image) {
+      document.querySelector(".image-holder img").src = image;
+      addSelected('genderSelection', gender);
+      addSelected('ethnicitySelection', ethnicity);
+    }
+
+    function getData(gender, age, ethnicity) {
+
+      if (ethnicity == "white") {
+        let ethnicity = "dutch background";
+        getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json', age, gender);
+        document.querySelector('.gender-category').innerHTML = gender;
+        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+      } else if (ethnicity == "black") {
+        let ethnicity = "migration background";
+        getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json', age, gender);
+        document.querySelector('.gender-category').innerHTML = gender;
+        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+      } else if (ethnicity == "asian") {
+        let ethnicity = "non-western migration background";
+        getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json', age, gender);
+        document.querySelector('.gender-category').innerHTML = gender;
+        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+      } else if (ethnicity == "hispanic") {
+        let ethnicity = "western migration background";
+        getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json', age, gender);
+        document.querySelector('.gender-category').innerHTML = gender;
+        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+      } else if (ethnicity == "other") {
+        let ethnicity = "unknown migration background";
+        getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json', age, gender);
+        document.querySelector('.gender-category').innerHTML = gender;
+        document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+      }
+    }
+
+
+  });
+
+
+  function getAges() {
+    let ageSelection = document.querySelector('#ageSelection');
+    for (let i = 12; i < 100; i++) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.innerHTML = i;
+      ageSelection.appendChild(opt);
+
+      // ageSelection.append('<option value="'+i+'">'+i+'</option>');
+    }
+
+    addSelected('ageSelection', localStorage.getItem('age'));
+  }
+
+
+  function between(x, min, max) {
+    return x >= min && x <= max;
+  }
+
+  function ageChecker(age) {
+    if (between(age, 12, 18)) {
+      age = "12-18";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 18, 25)) {
+      age = "18-25";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 25, 45)) {
+      age = "25-45";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (between(age, 45, 65)) {
+      age = "45-65";
+      document.querySelector('.age-category').innerHTML = age;
+    } else if (age >= 65) {
+      age = "65-65+";
+      document.querySelector('.age-category').innerHTML = age;
+    }
+    return age;
+  }
+
+  function addSelected(element, value) {
+    let select = document.getElementById(element);
+    let option;
+
+    for (let i = 0; i < select.options.length; i++) {
+      option = select.options[i];
+
+      if (option.value == value) {
+
+        // or
+        // if (option.text == 'Malaysia') {
+        option.selected = 'selected';
+        return;
+      }
+    }
+  }
+
+  function updateChart() {
+    let gender = document.querySelector('#genderSelection').value;
+    let age = document.querySelector('#ageSelection').value;
+    let ethnicity = document.querySelector('#ethnicitySelection').value;
+
+    ageChecker(age);
+
+    console.log(gender);
+    console.log(ageChecker(age));
+    console.log(ethnicity);
+
+    if (ethnicity == "white") {
+      let ethnicity = "dutch background";
+      getChart('../data/aanhoudingen/NA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "black") {
+      let ethnicity = "migration background";
+      getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "asian") {
+      let ethnicity = "non-western migration background";
+      getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "hispanic") {
+      let ethnicity = "western migration background";
+      getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    } else if (ethnicity == "other") {
+      let ethnicity = "unknown migration background";
+      getChart('../data/aanhoudingen/OMA_verdachten_aanhoudingen.json', ageChecker(age), gender);
+      document.querySelector('.gender-category').innerHTML = gender;
+      document.querySelector('.ethnicity-category').innerHTML = ethnicity;
+
+    }
+
+    getFaces(gender, ageChecker(age), age, ethnicity)
+
+  }
+
+
+
+</script>
+
+</html>

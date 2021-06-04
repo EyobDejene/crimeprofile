@@ -7,7 +7,7 @@
     "dev:scss": "node-sass --output-style nested -o css scss/styles.scss",
     "dev:watch": "onchange 'scss' -- npm run dev:scss",
     "dev:serve": "browser-sync start --no-notify --server --ss 'views' --files 'scss/**/*.scss, views/*.html, js/*.js'",
-    "server": "run-p dev:watch dev:serve",
+    "server": "run-p dev:watch dev:serve ",
     "build:dist": "mkdir -p dist/{css,js,img,fonts}",
     "build:html": "html-minifier --input-dir ./views --output-dir ./dist --collapse-whitespace",
     "build:css": "postcss -u autoprefixer -o dist/css/styles.css css/*.css",
@@ -22,7 +22,9 @@
   "dependencies": {
     "bootstrap-4-grid": "^3.4.0",
     "browser-sync": "^2.26.14",
-    "clarifai-nodejs-grpc": "^7.4.0"
+    "chart.js": "^3.2.1",
+    "clarifai-nodejs-grpc": "^7.4.0",
+    "mongodb": "^3.6.9"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",

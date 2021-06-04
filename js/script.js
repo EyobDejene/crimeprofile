@@ -1,3 +1,11 @@
+var Chart = require('chart.js');
+var myChart = new Chart(ctx, {
+
+});
+
+
+
+
 const video = document.querySelector('#my_camera video');
 
 Promise.all([
@@ -39,5 +47,6 @@ video.addEventListener('play', () => {
 
 
 });
+
 
 

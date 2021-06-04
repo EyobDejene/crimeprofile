@@ -6,6 +6,8 @@
 header{
   font-family: IBM-Medium;
   font-size: 0.875rem;
+  background-color: $black-b;
+  z-index: 3;
 }
 
 
@@ -14,7 +16,8 @@ nav .navigation{
   justify-content: flex-end;
   list-style:none;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem 0rem;
+  overflow: hidden;
 }
 
 nav .navigation li a{
@@ -34,8 +37,8 @@ nav .navigation li{
 }
 
 
-nav .navigation li{
-
+nav .navigation li a{
+  color: rgba(255,255,255,1);
 }
 
 
@@ -43,4 +46,15 @@ nav .navigation li{
 nav .navigation li:first-child {
   margin-left: 0;
   margin-right: auto;
+
+}
+
+
+nav .navigation li:hover{
+  border-bottom:2px inset $darkblue;
+  position: relative;
+}
+
+nav .navigation li:first-child:hover {
+  border-bottom: none !important;
 }

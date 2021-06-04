@@ -1,0 +1,147 @@
+[
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "Totaal",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":348730,
+    "vermogensmisdrijven": 122870,
+    "vernielingen": 47920,
+    "geweldsmisdrijven": 68970,
+    "verkeersmisdrijven": 67070,
+    "drugsmisdrijven": 41900
+  },
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "12 tot 18 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":28910,
+    "vermogensmisdrijven": 12390,
+    "vernielingen": 8870,
+    "geweldsmisdrijven": 5710,
+    "verkeersmisdrijven": 820,
+    "drugsmisdrijven": 1120
+  },
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "18 tot 25 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":85980,
+    "vermogensmisdrijven": 31560,
+    "vernielingen": 14350,
+    "geweldsmisdrijven": 13930,
+    "verkeersmisdrijven": 12220,
+    "drugsmisdrijven": 13920
+  },
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "25 tot 45 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":172060,
+    "vermogensmisdrijven": 60740,
+    "vernielingen": 18890,
+    "geweldsmisdrijven": 33730,
+    "verkeersmisdrijven": 36640,
+    "drugsmisdrijven": 22060
+  },
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "45 tot 65 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":52820,
+    "vermogensmisdrijven": 15290,
+    "vernielingen": 4680,
+    "geweldsmisdrijven": 13430,
+    "verkeersmisdrijven": 14920,
+    "drugsmisdrijven": 4500
+  },
+  {
+    "Geslacht": "Mannen",
+    "Leeftijd": "65 jaar of ouder",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":6690,
+    "vermogensmisdrijven": 1870,
+    "vernielingen": 490,
+    "geweldsmisdrijven": 1740,
+    "verkeersmisdrijven": 2370,
+    "drugsmisdrijven": 220
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "Totaal",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":78180,
+    "vermogensmisdrijven": 40600,
+    "vernielingen": 7160,
+    "geweldsmisdrijven": 11860,
+    "verkeersmisdrijven": 10960,
+    "drugsmisdrijven": 7600
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "12 tot 18 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":9940,
+    "vermogensmisdrijven": 6500,
+    "vernielingen": 1470,
+    "geweldsmisdrijven": 1670,
+    "verkeersmisdrijven": 120,
+    "drugsmisdrijven": 180
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "18 tot 25 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":16380,
+    "vermogensmisdrijven": 9100,
+    "vernielingen": 1490,
+    "geweldsmisdrijven": 2170,
+    "verkeersmisdrijven": 1690,
+    "drugsmisdrijven": 1930
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "25 tot 45 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":34560,
+    "vermogensmisdrijven": 16530,
+    "vernielingen": 2850,
+    "geweldsmisdrijven": 5490,
+    "verkeersmisdrijven": 5500,
+    "drugsmisdrijven": 4190
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "45 tot 65 jaar",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":14520,
+    "vermogensmisdrijven": 6970,
+    "vernielingen": 1160,
+    "geweldsmisdrijven": 2250,
+    "verkeersmisdrijven": 2930,
+    "drugsmisdrijven": 1210
+  },
+  {
+    "Geslacht": "Vrouwen",
+    "Leeftijd": "65 jaar of ouder",
+    "Migratieachtergrond": "Westerse migratieachtergrond",
+    "Perioden": "2005-2014",
+    "Totaal":2270,
+    "vermogensmisdrijven": 1140,
+    "vernielingen": 110,
+    "geweldsmisdrijven": 210,
+    "verkeersmisdrijven": 730,
+    "drugsmisdrijven": 80
+  }
+
+]
