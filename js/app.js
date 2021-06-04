@@ -131,11 +131,9 @@ for(let i =0; i < button.length; i++){
 function notify(msg){
   let frame = document.querySelector('.overlay');
   frame.querySelector('p').innerHTML = "";
-  if(msg.path) {
-    let options = msg.path[0].classList.contains('save-data');
-    if (options) {
+  console.log(msg)
+  if(msg.srcElement.classList.contains('save-data')) {
       frame.querySelector('.options').classList.remove('not-visible');
-    }
   }
 
   if(msg.type == "click"){
