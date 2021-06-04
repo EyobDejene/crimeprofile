@@ -14,8 +14,8 @@
     "build:js": "cp js/* dist/js",
     "build:fonts": "cp fonts/* dist/fonts",
     "build:img": "cp img/* dist/img",
-    "build:data": "cp data/* dist/data",
-    "build:models": "cp models/* dist/models",
+    "build:data": "cp -r data/ dist/data",
+    "build:models": "cp -r models dist/models",
     "build": "run-s build:*"
   },
   "keywords": [],
