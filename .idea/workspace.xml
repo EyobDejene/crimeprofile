@@ -22,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/views/about.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="259">
-              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -85,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/views/faces.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="118" column="29" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
+            <state relative-caret-position="174">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
             </state>
           </provider>
         </entry>
@@ -111,8 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chart</find>
-      <find>saveData</find>
       <find>helper</find>
       <find>.close</find>
       <find>snapData</find>
@@ -141,6 +139,8 @@
       <find>dataset</find>
       <find>graph</find>
       <find>tries</find>
+      <find>young</find>
+      <find>your</find>
     </findStrings>
     <replaceStrings>
       <replace>Totaal verdachten&quot;</replace>
@@ -233,9 +233,9 @@
         <option value="$PROJECT_DIR$/../Riskprofile/dist/_headers" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/detect.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/app.js" />
-        <option value="$PROJECT_DIR$/../Riskprofile/views/faces.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/analyzer.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/about.html" />
+        <option value="$PROJECT_DIR$/../Riskprofile/views/faces.html" />
       </list>
     </option>
   </component>
@@ -333,12 +333,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620471490652</updated>
-      <workItem from="1620471492711" duration="263454000" />
+      <workItem from="1620471492711" duration="263808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263454000" />
+    <option name="totallyTimeSpent" value="263808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="877" extended-state="0" />
@@ -692,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/views/faces.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="118" column="29" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -712,7 +705,14 @@
     <entry file="file://$PROJECT_DIR$/../Riskprofile/views/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/views/faces.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
