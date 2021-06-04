@@ -101,7 +101,7 @@
                 <legend class="box-border">>_Features</legend>
                 <div class="helper-box">
                   <div class="helper"   data-msg="
-                  Based on your facial characteristics, the system tries classify your gender, age and ethnicity with a confidence score.
+                  Based on your facial characteristics, the system tries to classify your gender, age and ethnicity with a confidence score.
                   The confidence score is a number between 0 and 100. A score of 100 is likely an exact match, while a score of 0 means, that no matching answer was found. The higher the score the greater the confidence in the classification.
                   "
                   >?</div>
@@ -181,7 +181,12 @@
               <fieldset class="box-border">
                 <legend class="box-border">>_Crime profile</legend>
                 <div class="helper-box">
-                  <div class="helper"   data-msg="Graph">?</div>
+                  <div class="helper" data-msg="
+                  This graph shows you your representation within the historical crime data based on your AI based profile.
+The dataset is a collection of all persons (3348350) who have been arrested on having committed a criminal offense in the Netherlands between 2005-2014.<br><br>
+Datasource: Statistics Netherlands.<br><br><a href='https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81947NED/table?dl=53F99' target='_blank'>view dataset</a>"
+
+                  >?</div>
 
                   </div>
                 <div class="content chart">
@@ -304,6 +309,10 @@
     event.stopPropagation();
     event.preventDefault();
     snapData(true);
+  });
+
+  document.querySelector('.save-data').addEventListener('click',function() {
+    clickedButton();
   });
 
 </script>

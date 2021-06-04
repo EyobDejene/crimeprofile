@@ -131,10 +131,7 @@ for(let i =0; i < button.length; i++){
 function notify(msg){
   let frame = document.querySelector('.overlay');
   frame.querySelector('p').innerHTML = "";
-  console.log(msg)
-  if(msg.srcElement.classList.contains('save-data')) {
-      frame.querySelector('.options').classList.remove('not-visible');
-  }
+
 
   if(msg.type == "click"){
     frame.classList.add('manual');
@@ -193,3 +190,15 @@ $(window).load(function() {
   });
 });
 
+
+function clickedButton() {
+  let frame = document.querySelector('.overlay');
+  frame.querySelector('p').innerHTML = "";
+
+  frame.querySelector('.options').classList.remove('not-visible');
+  frame.classList.add('manual');
+  let msg = msg.srcElement.getAttribute('data-msg');
+
+  frame.classList.remove('not-visible');
+  frame.querySelector('p').innerHTML = msg;
+}
