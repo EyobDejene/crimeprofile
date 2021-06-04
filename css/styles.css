@@ -47,7 +47,8 @@ legend {
 
 .cta:hover {
   color: #000000;
-  background-color: #fff; }
+  background-color: #fff;
+  border-color: #00FF29 !important; }
 
 .cta, a, .helper-box {
   display: block;
@@ -225,6 +226,9 @@ legend {
 .chart-wrapper {
   position: relative;
   width: 100%; }
+
+.chart {
+  padding-top: .5rem; }
 
 .notification-content a {
   width: 100%;
@@ -694,7 +698,7 @@ nav .navigation li:first-child {
   margin-right: auto; }
 
 nav .navigation li:hover {
-  border-bottom: 2px inset #0500FF;
+  border-bottom: 0.5px inset #00FF29;
   position: relative; }
 
 nav .navigation li:first-child:hover {

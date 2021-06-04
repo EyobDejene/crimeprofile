@@ -128,15 +128,16 @@ for(let i =0; i < button.length; i++){
 
 
 
-function notify(msg){
+function notify(msg,manual){
   let frame = document.querySelector('.overlay');
   frame.querySelector('p').innerHTML = "";
 
 
-  if(msg.type == "click"){
+  if(msg.type == "click" || manual){
     frame.classList.add('manual');
-    msg = msg.srcElement.getAttribute('data-msg');
-
+    if(!manual){
+      msg = msg.srcElement.getAttribute('data-msg');
+    }
 
   }else{
     frame.querySelector('.options').classList.add('not-visible');
