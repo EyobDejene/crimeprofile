@@ -80,7 +80,7 @@ footer{
   color: #ffffff;
   //background: $lightblack;
   margin: 10px 0px 1px;
-  padding: .5rem;
+  padding: .3rem;
 }
 
 
@@ -92,7 +92,7 @@ footer{
 #progressbar .current:after{
   width: 0%;
   animation: move 1s normal forwards ease-in-out;
-  animation-delay: 1s;
+  animation-delay: 5s;
 }
 
 @keyframes move {
@@ -104,9 +104,19 @@ footer{
   }
 }
 #progressbar .last:after{
-  width: 100%;
+  width: 0%;
+  animation: move2 1s normal forwards ease-in-out;
+  animation-delay: 5s;
 }
 
+@keyframes move2 {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
 
 .progress-bar {
   background-color: $darkblue;

@@ -72,6 +72,126 @@ legend{
   background-color: $white_white;
 }
 
+
+
+
+
+
+.cta,a,.helper-box {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+
+  transition: all .2s ease;
+
+
+  &:before,
+  &:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: $green;
+  }
+
+  &:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff;
+  }
+
+  &:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff;
+  }
+
+  &:hover {
+    background: black;
+    color: $green;
+    border-color: black;
+  }
+
+  &:hover:before {
+    animation: glitch-test 1.5s infinite linear alternate-reverse;
+  }
+
+  &:hover:after {
+    animation: glitch-test .5s infinite linear alternate;
+  }
+
+}
+
+@keyframes glitch-test {
+  0% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  5.88235% {
+    clip: rect(0px, 600px, 0px, 0px);
+  }
+  11.76471% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  17.64706% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  23.52941% {
+    clip: rect(100px, 600px, 100px, 0px);
+  }
+  29.41176% {
+    clip: rect(0px, 600px, 600px, 0px);
+  }
+  35.29412% {
+    clip: rect(100px, 600px, 0px, 0px);
+  }
+  41.17647% {
+    clip: rect(0px, 600px, 600px, 0px);
+  }
+  47.05882% {
+    clip: rect(100px, 600px, 0px, 0px);
+  }
+  52.94118% {
+    clip: rect(-3px, 600px, 0px, 0px);
+  }
+  58.82353% {
+    clip: rect(100px, 450px,100px, 0px);
+  }
+  64.70588% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  70.58824% {
+    clip: rect(100px, 450px, 100px, 0px);
+  }
+  76.47059% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  82.35294% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  88.23529% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  94.11765% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+  100% {
+    clip: rect(0px, 450px, 0px, 0px);
+  }
+}
+
+
+
 .helper-box{
   width: 100%;
   position: relative;
@@ -79,12 +199,16 @@ legend{
   padding-bottom: .5rem;
 }
 
+
+
 .close-box{
   height: auto;
   width: 100%;
   position: relative;
   display: flex;
 }
+
+
 
 .close{
   position: absolute;
@@ -209,4 +333,124 @@ legend{
 .notification-content a:hover{
   background-color: $white_white;
   color: $black-b;
+}
+
+
+
+
+
+.loader p{
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+
+  transition: all .2s ease;
+
+
+
+  &:before,
+  &:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: $green;
+  }
+
+  &:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff;
+  }
+
+  &:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff;
+  }
+
+  & {
+    background: transparent;
+    color: $green;
+  }
+
+  &:before {
+    animation: glitch-test 1.5s infinite linear alternate-reverse;
+  }
+
+  &:after {
+    animation: glitch-test .5s infinite linear alternate;
+  }
+}
+
+
+
+
+.helper-box,
+nav .navigation li:first-child{
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+
+  transition: all .6s ease;
+
+
+
+  &:before,
+  &:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: $green;
+  }
+
+  &:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff;
+  }
+
+  &:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff;
+  }
+
+  & {
+    background: transparent;
+    color: $green;
+  }
+
+  &:before {
+    animation: glitch-test 3s infinite linear alternate-reverse ;
+    animation-delay: 3s;
+  }
+
+  &:after {
+    animation: glitch-test 4s infinite linear alternate;
+    animation-delay: 1s;
+  }
 }

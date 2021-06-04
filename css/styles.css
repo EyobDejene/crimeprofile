@@ -49,6 +49,81 @@ legend {
   color: #000000;
   background-color: #fff; }
 
+.cta, a, .helper-box {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s ease; }
+  .cta:before, .cta:after, a:before, a:after, .helper-box:before, .helper-box:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: #00FF29; }
+  .cta:before, a:before, .helper-box:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff; }
+  .cta:after, a:after, .helper-box:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff; }
+  .cta:hover, a:hover, .helper-box:hover {
+    background: black;
+    color: #00FF29;
+    border-color: black; }
+  .cta:hover:before, a:hover:before, .helper-box:hover:before {
+    animation: glitch-test 1.5s infinite linear alternate-reverse; }
+  .cta:hover:after, a:hover:after, .helper-box:hover:after {
+    animation: glitch-test .5s infinite linear alternate; }
+
+@keyframes glitch-test {
+  0% {
+    clip: rect(-3px, 600px, 0px, 0px); }
+  5.88235% {
+    clip: rect(0px, 600px, 0px, 0px); }
+  11.76471% {
+    clip: rect(-3px, 600px, 0px, 0px); }
+  17.64706% {
+    clip: rect(-3px, 600px, 0px, 0px); }
+  23.52941% {
+    clip: rect(100px, 600px, 100px, 0px); }
+  29.41176% {
+    clip: rect(0px, 600px, 600px, 0px); }
+  35.29412% {
+    clip: rect(100px, 600px, 0px, 0px); }
+  41.17647% {
+    clip: rect(0px, 600px, 600px, 0px); }
+  47.05882% {
+    clip: rect(100px, 600px, 0px, 0px); }
+  52.94118% {
+    clip: rect(-3px, 600px, 0px, 0px); }
+  58.82353% {
+    clip: rect(100px, 450px, 100px, 0px); }
+  64.70588% {
+    clip: rect(0px, 450px, 0px, 0px); }
+  70.58824% {
+    clip: rect(100px, 450px, 100px, 0px); }
+  76.47059% {
+    clip: rect(0px, 450px, 0px, 0px); }
+  82.35294% {
+    clip: rect(0px, 450px, 0px, 0px); }
+  88.23529% {
+    clip: rect(0px, 450px, 0px, 0px); }
+  94.11765% {
+    clip: rect(0px, 450px, 0px, 0px); }
+  100% {
+    clip: rect(0px, 450px, 0px, 0px); } }
+
 .helper-box {
   width: 100%;
   position: relative;
@@ -162,6 +237,88 @@ legend {
 .notification-content a:hover {
   background-color: #fff;
   color: #000; }
+
+.loader p {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s ease; }
+  .loader p:before, .loader p:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: #00FF29; }
+  .loader p:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff; }
+  .loader p:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff; }
+  .loader p {
+    background: transparent;
+    color: #00FF29; }
+  .loader p:before {
+    animation: glitch-test 1.5s infinite linear alternate-reverse; }
+  .loader p:after {
+    animation: glitch-test .5s infinite linear alternate; }
+
+.helper-box,
+nav .navigation li:first-child {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .6s ease; }
+  .helper-box:before, .helper-box:after,
+  nav .navigation li:first-child:before,
+  nav .navigation li:first-child:after {
+    content: '+    ++';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: black;
+    color: #00FF29; }
+  .helper-box:before,
+  nav .navigation li:first-child:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff; }
+  .helper-box:after,
+  nav .navigation li:first-child:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff; }
+  .helper-box,
+  nav .navigation li:first-child {
+    background: transparent;
+    color: #00FF29; }
+  .helper-box:before,
+  nav .navigation li:first-child:before {
+    animation: glitch-test 3s infinite linear alternate-reverse;
+    animation-delay: 3s; }
+  .helper-box:after,
+  nav .navigation li:first-child:after {
+    animation: glitch-test 4s infinite linear alternate;
+    animation-delay: 1s; }
 
 @font-face {
   font-family: 'Dejavu-Regular';
@@ -610,7 +767,7 @@ footer {
   display: block;
   color: #ffffff;
   margin: 10px 0px 1px;
-  padding: .5rem; }
+  padding: .3rem; }
 
 #progressbar li.active:before,
 #progressbar li.active:after {
@@ -619,7 +776,7 @@ footer {
 #progressbar .current:after {
   width: 0%;
   animation: move 1s normal forwards ease-in-out;
-  animation-delay: 1s; }
+  animation-delay: 5s; }
 
 @keyframes move {
   0% {
@@ -628,7 +785,15 @@ footer {
     width: 45%; } }
 
 #progressbar .last:after {
-  width: 100%; }
+  width: 0%;
+  animation: move2 1s normal forwards ease-in-out;
+  animation-delay: 5s; }
+
+@keyframes move2 {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
 
 .progress-bar {
   background-color: #0500FF; }
