@@ -311,7 +311,7 @@ function snapData(state){
     if(state){
       saveData(gender,age_cat,age,ethnicity,data_uri)
     }else{
-      window.location = '/faces.html';
+      window.location = 'faces.html';
     }
 
   });

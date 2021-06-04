@@ -10,14 +10,13 @@ for(i=0, len=anchors.length; i<len; i++){
 
 function runDetection(state) {
 
-    Webcam.set({
-      width:'420',
-      height: '300',
-      image_format: 'jpeg',
-      jpeg_quality: 90
-    });
+    // Webcam.set({
+    //   width:'420',
+    //   height: '300',
+    //   image_format: 'jpeg',
+    //   jpeg_quality: 90
+    // });
 
-    Webcam.attach('#my_camera');
 
 
     var kairos = new Kairos("app_id", "app_key");
@@ -33,9 +32,19 @@ function runDetection(state) {
 
       var kairosJSON = JSON.parse(response.responseText);
       console.log(kairosJSON);
-      if (!kairosJSON.images[0].faces[0]) {
+      if (!kairosJSON.images) {
         console.log('no images in face response');
+        document.querySelector('.save-data').classList.add('disabled');
+
+        let msg = "Frame your face and wait for us to recognize it. This can take a few seconds. Make sure there is enough light, do not cover your mouth and make sure that only one person is in the picture.";
+        notify(msg);
+
+
         return;
+      }else{
+
+          closeNotifyAuto();
+          document.querySelector('.save-data').classList.remove('disabled');
       }
 
       document.getElementById("kairos_response").innerHTML = JSON.stringify(
@@ -63,15 +72,14 @@ function runDetection(state) {
       if(gender == "M") {
         genderinFile = "males";
         genderField.innerHTML = "male";
-        genderConfPercentage.innerHTML = genderMConf * 100 +'%';
-        genderBar.style.width = genderMConf * 100 +'%';
+        genderConfPercentage.innerHTML = Math.round((genderMConf * 45) / 0.4534) +'%';
+        genderBar.style.width = Math.round((genderMConf * 45) / 0.4534)+'%';
       }else{
         genderinFile = "females";
         genderField.innerHTML = "female";
-        genderConfPercentage.innerHTML = genderFConf * 100 +'%';
-        genderBar.style.width = genderFConf * 100 +'%';
+        genderConfPercentage.innerHTML = Math.round(genderFConf * 45 / 0.4534) +'%';
+        genderBar.style.width = Math.round(genderFConf * 45 / 0.4534) +'%';
       }
-
 
 
       // age
@@ -80,8 +88,9 @@ function runDetection(state) {
       let ageConfPercentage = document.querySelector('.age-analyzer .td-value-percentage');
 
       ageField.innerHTML = age;
-      ageBar.style.width = ageConf * 34 +'%';
-      ageConfPercentage.innerHTML = Math.round(ageConf * 30) +'%';
+      console.log(ageConf);
+      ageBar.style.width = ageConf * 60 +'%';
+      ageConfPercentage.innerHTML = Math.round(ageConf * 60) +'%';
 
 
       // ethnicity
@@ -94,8 +103,8 @@ function runDetection(state) {
 
 
       console.log(arrayEthnicity[highestConf]);
-      ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 100) +'%';
-      ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 100) +'%';
+      ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
+      ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
 
 
       function round(input){
@@ -188,31 +197,34 @@ function runDetection(state) {
 
       Webcam.snap(function(data_uri) {
         // display results in page
-        // console.log(data_uri);
+        console.log(data_uri);
         var options = {"selector": "FULL"};
-      //  kairos.detect(data_uri, myDetectCallback, options);
+        kairos.detect(data_uri, myDetectCallback, options);
 
       });
     }
 
-    navigator.getMedia = (navigator.getUserMedia || // use the proper vendor prefix
-        navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia ||
-        navigator.msGetUserMedia);
 
-    navigator.getMedia({video: true}, function() {
+
+  let constraints = { audio: false, video: true };
+  navigator.mediaDevices.getUserMedia(constraints).then(function(){
       // webcam is available
-
+      // Webcam.attach('#my_camera');
       console.log(state);
        window.setInterval(function() {
         if(state){
           snap();
         }
-      }, 8000);
+      }, 6000);
 
 
     }, function() {
       // webcam is not available
+      // let msg = "No camera has been detected. Check your browser settings and reload the page." +
+      //     "This application currently only works when a camera is available. An upload function will be available in the near future. ";
+      // notify(msg);
+
+
     });
 
     const video = document.querySelector('#my_camera video');
@@ -232,36 +244,81 @@ function runDetection(state) {
       )
     }
 
+
     video.addEventListener('play', () => {
       const canvas = faceapi.createCanvasFromMedia(video);
-      video.parentNode.insertBefore(canvas, video.nextSibling);
 
-      const displaySize = {width: video.offsetWidth, height: video.offsetHeight}
+        video.parentNode.insertBefore(canvas, video.nextSibling);
+        // console.log('node maded');
+        // console.log(video.querySelectorAll('canvas').length)
+        //canvas.parentNode.insertBefore(video, canvas.nextSibling);
+        // let videoElements = document.querySelectorAll('video').length;
+        //video.insertBefore(canvas,video.nextSibling);
+        //  video.parentNode.insertBefore(canvas, video.childNodes[0]);
 
-      faceapi.matchDimensions(canvas, displaySize);
+        const displaySize = {
+          width: video.offsetWidth,
+          height: video.offsetHeight
+        }
 
-      setInterval(async () => {
-        const detections = await faceapi.detectAllFaces(video,
-            new faceapi.TinyFaceDetectorOptions()).
-            withFaceLandmarks().
-            withFaceExpressions()
-        const resizedDetections = faceapi.resizeResults(detections,
-            displaySize);
+        faceapi.matchDimensions(canvas, displaySize);
 
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+        setInterval(async () => {
+          const detections = await faceapi.detectAllFaces(video,
+              new faceapi.TinyFaceDetectorOptions()).
+              withFaceLandmarks().
+              withFaceExpressions()
+          const resizedDetections = faceapi.resizeResults(detections,
+              displaySize);
 
-        const options = { boxColor: "#ff0018" }
-        //console.log(resizedDetections);
-        // new faceapi.draw.DrawFaceLandmarks(resizedDetections.landmarks, options).draw(canvas)
-        //faceapi.draw.drawDetections(resizedDetections,options).draw(canvas);
-        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        faceapi.draw.drawDetections(canvas,resizedDetections)
+          canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
 
+          //console.log(resizedDetections);
+          // new faceapi.draw.DrawFaceLandmarks(resizedDetections.landmarks, options).draw(canvas)
+          //faceapi.draw.drawDetections(resizedDetections,options).draw(canvas);
+          faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+          faceapi.draw.drawDetections(canvas, resizedDetections)
 
-        //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-      }, 200);
-      return false;
+          //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+        }, 200);
+        return false;
     });
+
+
+
+}
+
+
+
+
+
+function snapData(state){
+
+  Webcam.snap(function(data_uri) {
+
+    let gender = document.querySelector('.gender-category').innerHTML;
+    let age_cat = document.querySelector('.age-category').innerHTML;
+    let age = document.querySelector('.age-analyzer .td-value').innerHTML;
+    let ethnicity = document.querySelector('.ethnicity-analyzer .td-value').innerHTML;
+
+    localStorage.setItem('image', data_uri);
+    localStorage.setItem('gender', gender);
+    localStorage.setItem('age_cat', age_cat);
+    localStorage.setItem('age', age);
+    localStorage.setItem('ethnicity', ethnicity);
+
+
+    if(state){
+      saveData(gender,age_cat,age,ethnicity,data_uri)
+    }else{
+      window.location = 'faces.html';
+    }
+
+  });
+
+
+
+
 
 
 }
