@@ -39,7 +39,7 @@ var myChart = new Chart(ctx, {
   },
 
   options: {
-
+    onClick: handleClick,
 
     plugins: {
       legend: {
@@ -177,6 +177,41 @@ function getChart(dataFile,age,gender) {
       console.log(err);
     }
   });
+
+
+}
+
+function handleClick(e) {
+  let nearest = myChart.getElementsAtEventForMode(e, 'nearest', {intersect: false, axis: 'x'});
+    let labelX = myChart.scales.x.ticks;
+    let bar = nearest[0].index;
+    let selectedBar  = labelX[bar].label;
+    console.log();
+    if(selectedBar == 'property crimes'){
+      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van vermogensmisdrijven. Onder vermogensmisdrijven vallen alle vormen van diefstal en inbraak. Daarnaast vallen verduistering, bedrog, valsheidsmisdrijven, afpersing, bankbreuk en witwassen in deze categorie misdrijven. Hieronder vallen alle vormen van diefstal en inbraak. Daarnaast vallen verduistering, bedrog, valsheidsmisdrijven, afpersing, bankbreuk en witwassen in deze categorie misdrijven.<br><br>' +
+          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      notify(msg,true);
+
+    }else if(selectedBar == 'public-order crimes'){
+      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van vernieling en openbare orde misdrijven. Hieronder vallen brandstichting, alle vormen van vernieling en misdrijven tegen de openbare orde en het openbaar gezag. Voorbeelden van misdrijven tegen de openbare orde en tegen het openbaar gezag zijn opruiing, huis-, computer- en lokaalvredebreuk, deelneming aan een criminele of terroristische organisatie, openlijke geweldpleging, godslastering, discriminatie en het doen van een valse aangifte. <br><br>' +
+        'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      notify(msg,true);
+    }else if(selectedBar == 'violent crimes'){
+      let msg = selectedBar+'<br><br>Alle verdachten van geweldsmisdrijven. Onder geweldsmisdrijven vallen alle seksuele misdrijven, waaronder verkrachting, aanranding en ontucht. Daarnaast gaat het om levensdelicten, zoals moord en doodslag, hulp bij zelfdoding, euthanasie en abortus. Ook dood en lichamelijk letsel door schuld, bedreiging, mishandeling, diefstal met geweld en afpersing horen bij deze categorie.<br><br>' +
+          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      notify(msg,true);
+    }else if(selectedBar == 'traffic offenses'){
+      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van verkeersmisdrijven.<br><br>' +
+          'De Wegenverkeerswet 1994 is de basis voor de regelgeving van het wegverkeer in Nederland. In deze wet staat beschreven wat verkeersdelicten (misdrijf of overtreding) zijn. De in deze tabel gepresenteerde cijfers hebben uitsluitend betrekking op misdrijven. De meest voorkomende verkeersmisdrijven zijn rijden onder invloed en verlaten plaats ongeval.<br><br>'+
+          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      notify(msg,true);
+    }else if(selectedBar == 'drug offenses'){
+      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van drugsmisdrijven.<br><br>' +
+          'De Opiumwet regelt de opsporing, vervolging en berechting van handelingen die te maken hebben met (verboden) drugsbezit en drugshandel. De wet maakt onderscheid tussen misdrijven en overtredingen. Op grond van de Opiumwet geldt een verbod op het bereiden, bewerken, verwerken, verkopen, afleveren, verstrekken, vervoeren of aanwezig hebben van middelen die genoemd worden op de zogeheten lijst I (harddrugs) en lijst II (softdrugs). Voorbeelden van de hier bedoelde stoffen zijn cocaïne, heroïne, methadon, morfine, opium en hennep. De in deze tabel gepresenteerde cijfers hebben uitsluitend betrekking op misdrijven.<br><br>'+
+          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie. ';
+      notify(msg,true);
+
+    }
 
 
 }
