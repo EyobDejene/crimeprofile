@@ -10,11 +10,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-58">
-              <caret line="247" column="68" selection-start-line="247" selection-start-column="68" selection-end-line="247" selection-end-column="68" />
+            <state relative-caret-position="56">
+              <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#div#0;n#div#0;n#section#0;n#article#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -40,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="127">
@@ -137,8 +137,8 @@
       <find>docs</find>
       <find>.json</find>
       <find>dataset.</find>
-      <find>dataset</find>
       <find>models</find>
+      <find>dataset</find>
     </findStrings>
     <replaceStrings>
       <replace>Totaal verdachten&quot;</replace>
@@ -222,7 +222,6 @@
         <option value="$PROJECT_DIR$/../Riskprofile/scss/pages/_faces.scss" />
         <option value="$PROJECT_DIR$/../Riskprofile/scss/globals/_footer.scss" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/cameraAvailablity.js" />
-        <option value="$PROJECT_DIR$/../Riskprofile/views/analyzer.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/faces.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/docs/index.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/.gitignore" />
@@ -234,6 +233,7 @@
         <option value="$PROJECT_DIR$/../Riskprofile/js/dataset.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/dist/_headers" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/detect.js" />
+        <option value="$PROJECT_DIR$/../Riskprofile/views/analyzer.html" />
       </list>
     </option>
   </component>
@@ -262,23 +262,12 @@
             <path>
               <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
               <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
               <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -331,12 +320,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620471490652</updated>
-      <workItem from="1620471492711" duration="258167000" />
+      <workItem from="1620471492711" duration="258339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258167000" />
+    <option name="totallyTimeSpent" value="258339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="877" extended-state="0" />
@@ -647,16 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="247" column="68" selection-start-line="247" selection-start-column="68" selection-end-line="247" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#div#0;n#div#0;n#section#0;n#article#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -675,9 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/dist/analyzer.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/dist/about.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -711,6 +687,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="232" column="48" selection-start-line="232" selection-start-column="48" selection-end-line="232" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/dist/analyzer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#div#0;n#div#0;n#section#0;n#article#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
