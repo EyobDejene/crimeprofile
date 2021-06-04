@@ -31,7 +31,7 @@ function runDetection(state) {
       $response.removeClass("modal");
 
       var kairosJSON = JSON.parse(response.responseText);
-      console.log(kairosJSON);
+      //console.log(kairosJSON);
       if (!kairosJSON.images) {
         console.log('no images in face response');
         document.querySelector('.save-data').classList.add('disabled');
@@ -88,7 +88,7 @@ function runDetection(state) {
       let ageConfPercentage = document.querySelector('.age-analyzer .td-value-percentage');
 
       ageField.innerHTML = age;
-      console.log(ageConf);
+      //console.log(ageConf);
       ageBar.style.width = ageConf * 60 +'%';
       ageConfPercentage.innerHTML = Math.round(ageConf * 60) +'%';
 
@@ -102,7 +102,7 @@ function runDetection(state) {
 
 
 
-      console.log(arrayEthnicity[highestConf]);
+      //console.log(arrayEthnicity[highestConf]);
       ethnicityBar.style.width =  Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
       ethnicityConfPercentage.innerHTML = Math.round(arrayEthnicity[highestConf] * 45 / 0.5313) +'%';
 
@@ -197,7 +197,7 @@ function runDetection(state) {
 
       Webcam.snap(function(data_uri) {
         // display results in page
-        console.log(data_uri);
+       // console.log(data_uri);
         var options = {"selector": "FULL"};
         kairos.detect(data_uri, myDetectCallback, options);
 
@@ -210,7 +210,7 @@ function runDetection(state) {
   navigator.mediaDevices.getUserMedia(constraints).then(function(){
       // webcam is available
       // Webcam.attach('#my_camera');
-      console.log(state);
+      //console.log(state);
        window.setInterval(function() {
         if(state){
           snap();
