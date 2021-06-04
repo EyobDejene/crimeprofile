@@ -230,10 +230,10 @@ function runDetection(state) {
     const video = document.querySelector('#my_camera video');
 
     Promise.all([
-      faceapi.nets.tinyFaceDetector.loadFromUri(window.location.host+'/models'),
-      faceapi.nets.faceLandmark68Net.loadFromUri(window.location.host+'/models'),
-      faceapi.nets.faceRecognitionNet.loadFromUri(window.location.host+'/models'),
-      faceapi.nets.faceExpressionNet.loadFromUri(window.location.host+'/models')
+      faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+      faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+      faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+      faceapi.nets.faceExpressionNet.loadFromUri('/models')
     ]).then(startVideo);
 
     function startVideo() {
