@@ -44,15 +44,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Riskprofile/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="117" column="38" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/js/cameraAvailablity.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -79,16 +70,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="229">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="28">
@@ -118,7 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.helper-box</find>
       <find>resize</find>
       <find>runDetection</find>
       <find>video</find>
@@ -148,9 +138,9 @@
       <find>href=&quot;/&quot;</find>
       <find>window.</find>
       <find>dist</find>
+      <find>docs</find>
     </findStrings>
     <replaceStrings>
-      <replace>&quot;Totaal geregistreerd verdachten&quot;:</replace>
       <replace>Totaal verdachten&quot;</replace>
       <replace>&quot;Totaal&quot;:</replace>
       <replace>&quot;Totaal geregistreerd verdachten:</replace>
@@ -180,6 +170,7 @@
       <replace>img/</replace>
       <replace>ethnicity</replace>
       <replace>docs</replace>
+      <replace>dist</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../Riskprofile/scss</dir>
@@ -192,8 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../Riskprofile/data/OMA_verdachten_aanhoudingen.json" />
-        <option value="$PROJECT_DIR$/../Riskprofile/data/WMA_verdachten_aanhoudingen.json" />
         <option value="$PROJECT_DIR$/../Riskprofile/data/aanhoudingen/NWMA_verdahten_aanhoudingen.json" />
         <option value="$PROJECT_DIR$/../Riskprofile/data/verdachten_aanhoudingen.json" />
         <option value="$PROJECT_DIR$/../Riskprofile/data/verdachten_geregisteerd.json" />
@@ -242,7 +231,9 @@
         <option value="$PROJECT_DIR$/../Riskprofile/views/analyzer.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/faces.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/detect.js" />
+        <option value="$PROJECT_DIR$/../Riskprofile/docs/index.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/package.json" />
+        <option value="$PROJECT_DIR$/../Riskprofile/.gitignore" />
       </list>
     </option>
   </component>
@@ -267,6 +258,16 @@
             <path>
               <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
               <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="barba-page-transitions-guide" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -319,15 +320,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620471490652</updated>
-      <workItem from="1620471492711" duration="254891000" />
+      <workItem from="1620471492711" duration="255147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254891000" />
+    <option name="totallyTimeSpent" value="255147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
@@ -356,9 +358,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/data/old geregisteerd/dm.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/data/old geregisteerd/mm.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -700,17 +699,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
         </state>
       </provider>
     </entry>
