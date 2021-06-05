@@ -698,7 +698,7 @@ nav .navigation li:first-child {
   margin-right: auto; }
 
 nav .navigation li:hover {
-  border-bottom: 0.5px inset #00FF29;
+  border-bottom: 0.2px inset #0500FF;
   position: relative; }
 
 nav .navigation li:first-child:hover {
