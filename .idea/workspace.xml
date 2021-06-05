@@ -10,14 +10,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="186" column="150" selection-start-line="186" selection-start-column="150" selection-end-line="186" selection-end-column="150" />
+            <state relative-caret-position="252">
+              <caret line="168" column="34" lean-forward="true" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#div#0;n#div#0;n#section#0;n#article#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="251" column="47" selection-start-line="251" selection-start-column="47" selection-end-line="251" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -84,15 +93,6 @@
               <folding>
                 <marker date="1622836064490" expanded="true" signature="439:456" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Riskprofile/scss/globals/_header.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -233,7 +233,6 @@
         <option value="$PROJECT_DIR$/../Riskprofile/views/faq.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/dataset.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/dist/_headers" />
-        <option value="$PROJECT_DIR$/../Riskprofile/js/detect.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/about.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/index.html" />
         <option value="$PROJECT_DIR$/../Riskprofile/scss/globals/_footer.scss" />
@@ -243,6 +242,7 @@
         <option value="$PROJECT_DIR$/../Riskprofile/js/app.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/js/chart.js" />
         <option value="$PROJECT_DIR$/../Riskprofile/views/analyzer.html" />
+        <option value="$PROJECT_DIR$/../Riskprofile/js/detect.js" />
       </list>
     </option>
   </component>
@@ -351,12 +351,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620471490652</updated>
-      <workItem from="1620471492711" duration="272560000" />
+      <workItem from="1620471492711" duration="273129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272560000" />
+    <option name="totallyTimeSpent" value="273129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="877" extended-state="0" />
@@ -623,13 +623,6 @@
     <entry file="file://$PROJECT_DIR$/../Riskprofile/dist/analyzer.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="275" column="23" selection-start-line="275" selection-start-column="12" selection-end-line="275" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/data/geregistreerd/MMA_verdachten_geregistreerd.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -726,11 +719,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Riskprofile/views/analyzer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="186" column="150" selection-start-line="186" selection-start-column="150" selection-end-line="186" selection-end-column="150" />
+        <state relative-caret-position="252">
+          <caret line="168" column="34" lean-forward="true" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#div#1;n#section#0;n#div#1;n#div#0;n#div#0;n#section#0;n#article#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Riskprofile/js/detect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="251" column="47" selection-start-line="251" selection-start-column="47" selection-end-line="251" selection-end-column="47" />
         </state>
       </provider>
     </entry>
