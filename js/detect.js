@@ -17,6 +17,13 @@ function runDetection(state) {
     //   jpeg_quality: 90
     // });
 
+  Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/models')
+  ]).then(startVideo);
+
 
 
     var kairos = new Kairos("app_id", "app_key");
@@ -204,12 +211,7 @@ function runDetection(state) {
       });
     }
 
-  Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/models')
-  ]).then(startVideo);
+
 
 
 
