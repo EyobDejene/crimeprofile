@@ -204,10 +204,27 @@ function runDetection(state) {
       });
     }
 
+  Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/models')
+  ]).then(startVideo);
 
 
-  let constraints = { audio: false, video: true };
-  navigator.mediaDevices.getUserMedia(constraints).then(function(){
+
+  function startVideo() {
+
+    navigator.getUserMedia(
+        {video: {}},
+        stream => video.srcObject = stream,
+        err => console.error(err)
+    )
+  }
+
+
+  let constraints = window.constraints = {audio: false, video: true};
+   navigator.mediaDevices.getUserMedia(constraints).then(function(){
       // webcam is available
       // Webcam.attach('#my_camera');
       //console.log(state);
@@ -216,32 +233,15 @@ function runDetection(state) {
           snap();
         }
       }, 6000);
-
-
     }, function() {
       // webcam is not available
       // let msg = "No camera has been detected. Check your browser settings and reload the page." +
       //     "This application currently only works when a camera is available. An upload function will be available in the near future. ";
       // notify(msg);
-
-
     });
-
     const video = document.querySelector('#my_camera video');
 
-    Promise.all([
-      faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-      faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-      faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-      faceapi.nets.faceExpressionNet.loadFromUri('/models')
-    ]).then(startVideo);
 
-    function startVideo() {
-      navigator.mediaDevices.getUserMedia(constraints),
-          stream => video.srcObject = stream,
-          err => console.error(err);
-
-    }
 
 
     video.addEventListener('play', () => {
@@ -250,9 +250,6 @@ function runDetection(state) {
         video.parentNode.insertBefore(canvas, video.nextSibling);
         video.setAttribute("playsinline",true);
         video.setAttribute("controls", true);
-        setTimeout(()=>{
-          video.removeAttribute("controls");
-        })
         // console.log('node maded');
         // console.log(video.querySelectorAll('canvas').length)
         //canvas.parentNode.insertBefore(video, canvas.nextSibling);
