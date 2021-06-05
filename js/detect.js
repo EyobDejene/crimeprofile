@@ -216,17 +216,21 @@ function runDetection(state) {
 
 
   function startVideo() {
-
-    navigator.getUserMedia(
-        {video: {}},
-        stream => video.srcObject = stream,
-        err => console.error(err)
-    )
+    runD();
+    // navigator.getUserMedia({video: true}, stream => video.srcObject = stream, err => console.error(err));
+    // // navigator.getUserMedia({video: true},function(){
+    // //
+    // // });
   }
 
 
-  let constraints = window.constraints = {audio: false, video: true};
-   navigator.mediaDevices.getUserMedia(constraints).then(function(){
+  function runD(){
+    const video = document.querySelector('#my_camera video');
+    video.setAttribute("playsinline",true);
+    video.setAttribute("controls", true);
+
+   //  let constraints = video.constraints = {video: true};
+   // navigator.mediaDevices.getUserMedia(constraints).then(function(){
       // webcam is available
       // Webcam.attach('#my_camera');
       //console.log(state);
@@ -235,23 +239,22 @@ function runDetection(state) {
           snap();
         }
       }, 6000);
-    }, function() {
+    // }, function() {
       // webcam is not available
       // let msg = "No camera has been detected. Check your browser settings and reload the page." +
       //     "This application currently only works when a camera is available. An upload function will be available in the near future. ";
       // notify(msg);
-    });
-    const video = document.querySelector('#my_camera video');
+    // });
 
 
 
 
-    video.addEventListener('play', () => {
+    //
+    // video.addEventListener('play', () => {
+
       const canvas = faceapi.createCanvasFromMedia(video);
 
         video.parentNode.insertBefore(canvas, video.nextSibling);
-        video.setAttribute("playsinline",true);
-        video.setAttribute("controls", true);
         // console.log('node maded');
         // console.log(video.querySelectorAll('canvas').length)
         //canvas.parentNode.insertBefore(video, canvas.nextSibling);
@@ -265,6 +268,8 @@ function runDetection(state) {
         }
 
         faceapi.matchDimensions(canvas, displaySize);
+
+
 
         setInterval(async () => {
           const detections = await faceapi.detectAllFaces(video,
@@ -285,9 +290,11 @@ function runDetection(state) {
           //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
         }, 200);
         return false;
-    });
+    // });
 
 
+
+}
 
 }
 
