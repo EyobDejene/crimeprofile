@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible">
   <title>Catch Your Crime Profile</title>
@@ -165,8 +165,11 @@
             <!-- start column 2 -->
             <div class="col-4">
               <section class="analyzer__section">
+                <!--<video id="gum-local" ></video>-->
+                <div id="my_camera">
 
-                <div id="my_camera"></div>
+                </div>
+
                 <div id="kairos_response" class="col-lg-6"
                      style="padding:10px;border:1px solid rgba(51, 51, 51, 0.08);background-color:
                rgba(204, 204, 204, 0.26);color:#fff;opacity: 0;"><i>(Response will appear here)</i></div>
@@ -295,6 +298,9 @@ Datasource: Statistics Netherlands.<br><br><a href='https://opendata.cbs.nl/stat
 <!-- project script -->
 <script async src="js/app.js"></script>
 <script src="js/cameraAvailablity.js"></script>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/camera.js"></script>
 
 
 <script>
