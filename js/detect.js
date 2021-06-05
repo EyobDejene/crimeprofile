@@ -250,6 +250,10 @@ function runDetection(state) {
 
         video.parentNode.insertBefore(canvas, video.nextSibling);
         video.setAttribute("playsinline",true);
+        video.setAttribute("controls", true);
+        setTimeout(()=>{
+          video.removeAttribute("controls");
+        })
         // console.log('node maded');
         // console.log(video.querySelectorAll('canvas').length)
         //canvas.parentNode.insertBefore(video, canvas.nextSibling);
