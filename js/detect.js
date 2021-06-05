@@ -237,11 +237,10 @@ function runDetection(state) {
     ]).then(startVideo);
 
     function startVideo() {
-      navigator.getUserMedia(
-          {video: true},
+      navigator.mediaDevices.getUserMedia(constraints),
           stream => video.srcObject = stream,
-          err => console.error(err)
-      )
+          err => console.error(err);
+
     }
 
 
