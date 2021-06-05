@@ -44,6 +44,7 @@ function checkDeviceSupport(callback) {
 
   MediaDevices = [];
   navigator.enumerateDevices(function(devices) {
+
     devices.forEach(function(_device) {
       var device = {};
       for (var d in _device) {
@@ -133,7 +134,7 @@ function recognizer() {
       });
 
 
-      let constraints = { audio: false, video: true };
+      let constraints = {video: true };
       navigator.mediaDevices.getUserMedia(constraints).then(function(){
         Webcam.attach('#my_camera');
       runDetection(true);
@@ -160,4 +161,5 @@ function recognizer() {
     // document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
     //console.log('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
   });
+
 }
