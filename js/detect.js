@@ -227,7 +227,7 @@ function runDetection(state) {
   function runD(){
     const video = document.querySelector('#my_camera video');
     video.setAttribute("playsinline",true);
-    video.setAttribute("controls", true);
+    // video.setAttribute("controls", true);
 
    //  let constraints = video.constraints = {video: true};
    // navigator.mediaDevices.getUserMedia(constraints).then(function(){
