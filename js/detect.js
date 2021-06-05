@@ -238,7 +238,7 @@ function runDetection(state) {
 
     function startVideo() {
       navigator.getUserMedia(
-          {video: {}},
+          {video: true},
           stream => video.srcObject = stream,
           err => console.error(err)
       )
