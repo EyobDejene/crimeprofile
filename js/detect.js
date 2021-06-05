@@ -249,6 +249,7 @@ function runDetection(state) {
       const canvas = faceapi.createCanvasFromMedia(video);
 
         video.parentNode.insertBefore(canvas, video.nextSibling);
+        video.setAttribute("playsinline",true);
         // console.log('node maded');
         // console.log(video.querySelectorAll('canvas').length)
         //canvas.parentNode.insertBefore(video, canvas.nextSibling);
