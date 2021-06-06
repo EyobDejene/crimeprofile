@@ -42,7 +42,7 @@ function runDetection(state) {
       if (!kairosJSON.images) {
         console.log('no images in face response');
         document.querySelector('.save-data').classList.add('disabled');
-
+        document.querySelector('.save-data').classList.remove('activeB');
         let msg = "Frame your face and wait for us to recognize it. This can take a few seconds. Make sure there is enough light, do not cover your mouth and make sure that only one person is in the picture.";
         notify(msg);
 
@@ -52,6 +52,7 @@ function runDetection(state) {
 
           closeNotifyAuto();
           document.querySelector('.save-data').classList.remove('disabled');
+          document.querySelector('.save-data').classList.add('activeB');
       }
 
       document.getElementById("kairos_response").innerHTML = JSON.stringify(
@@ -202,10 +203,13 @@ function runDetection(state) {
      //   document.querySelector('.ethnicity-category').innerHTML = ethnicity;
      //  document.querySelector('.age-category').innerHTML = Objectage;
 
+
+
       Webcam.snap(function(data_uri) {
         // display results in page
        // console.log(data_uri);
         var options = {"selector": "FULL"};
+        // console.log(data_uri)
         kairos.detect(data_uri, myDetectCallback, options);
 
       });
