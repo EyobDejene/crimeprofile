@@ -151,16 +151,16 @@ function runDetection(state) {
           document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }else if(highestConf == "black"){
-        let ethnicity = "migration background";
+        let ethnicity = "non-western migration background";
             ethnicityField.innerHTML = highestConf;
-        getChart('../data/aanhoudingen/MMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+        getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
           document.querySelector('.gender-category').innerHTML = genderinFile;
           document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
       }else if(highestConf == "asian"){
-        let ethnicity ="non-western migration background";
+        let ethnicity ="western migration background";
             ethnicityField.innerHTML =  highestConf;
-        getChart('../data/aanhoudingen/NWMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
+        getChart('../data/aanhoudingen/WMA_verdachten_aanhoudingen.json',Objectage,genderinFile);
           document.querySelector('.gender-category').innerHTML = genderinFile;
           document.querySelector('.ethnicity-category').innerHTML = ethnicity;
 
@@ -227,7 +227,7 @@ function runDetection(state) {
   function runD(){
     const video = document.querySelector('#my_camera video');
     video.setAttribute("playsinline",true);
-    video.setAttribute("controls", true);
+    // video.setAttribute("controls", true);
 
    //  let constraints = video.constraints = {video: true};
    // navigator.mediaDevices.getUserMedia(constraints).then(function(){
@@ -288,7 +288,7 @@ function runDetection(state) {
           faceapi.draw.drawDetections(canvas, resizedDetections)
 
           //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 200);
+        }, 100);
         return false;
     // });
 
