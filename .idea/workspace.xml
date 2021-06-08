@@ -93,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/analyzer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-401">
+            <state relative-caret-position="-1187">
               <caret line="222" column="25" lean-forward="true" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
             </state>
           </provider>
@@ -102,8 +102,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/chart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="210" column="148" selection-start-line="210" selection-start-column="148" selection-end-line="210" selection-end-column="148" />
+            <state relative-caret-position="345">
+              <caret line="211" column="130" selection-start-line="211" selection-start-column="130" selection-end-line="211" selection-end-column="130" />
             </state>
           </provider>
         </entry>
@@ -120,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
       <find>dataset</find>
       <find>graph</find>
       <find>young</find>
@@ -149,6 +148,7 @@
       <find>active</find>
       <find>h1</find>
       <find>class=&quot;info&quot;</find>
+      <find>handleClick</find>
       <find>view data</find>
     </findStrings>
     <replaceStrings>
@@ -382,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307126000" />
+    <option name="totallyTimeSpent" value="308038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="875" extended-state="6" />
@@ -741,15 +741,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/analyzer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401">
+        <state relative-caret-position="-1187">
           <caret line="222" column="25" lean-forward="true" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/chart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="210" column="148" selection-start-line="210" selection-start-column="148" selection-end-line="210" selection-end-column="148" />
+        <state relative-caret-position="345">
+          <caret line="211" column="130" selection-start-line="211" selection-start-column="130" selection-end-line="211" selection-end-column="130" />
         </state>
       </provider>
     </entry>
