@@ -1,2 +1,13 @@
 @import '../config/variables';
 @import '../config/media';
+
+.about h1{
+  font-family: IBM-Medium;
+}
+.about p{
+  font-family: IBM-Medium;
+}
+
+.about a{
+  color:$green;
+}
