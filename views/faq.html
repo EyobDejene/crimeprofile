@@ -73,13 +73,55 @@
                                 <div class="content">
                                     <h1>Frequently Asked Questions</h1>
                                    <ul>
-                                       <li>>_How does this application work?</li>
-                                       <li>>_Which dataset is used within the application?</li>
-                                       <li>>_Will this application store my data?</li>
-                                       <li>>_What third-party machine learning API services are integrated?</li>
-                                       <li>>_What will the third-party API Services do with my data?</li>
-                                       <li>>_What will the third-party API Services do with my data?</li>
-                                       <li>>_What permissions does the application require?</li>
+                                       <li>>_How does this application work?
+                                           <div class="info not-visible">
+                                               <p>
+                                                   This application works through api services and custom code.
+                                                   The application combines data with crime data to calculate your representation within the dataset.
+                                               </p>
+                                           </div>
+                                       </li>
+                                       <li>>_Which dataset is used within the application?<div class="info not-visible">
+                                           <p>
+                                                The dataset is fetched from the Statistics Netherlands where (suspects; crime group, gender, age and migration background) are categorized between 2005 - 2014.<br>
+                                               <a href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81947NED/table?ts=1619776089803&fromstatweb=true">view</a>
+
+                                           </p>
+                                       </div>
+                                       </li>
+                                       <li>>_Will this application store my data?<div class="info not-visible">
+                                           <p>
+                                               This application only stores data once the user has given permission to do so. The data that will be saved will only be saved locally in the web browser
+                                               Your data is stored locally on your own computer. The Data server does not keep a data base of user data. It only passes the necessary data to the APIs - without your personal information such as name, gender, etc. The third-party services might log or store anonymized data or use the results to improve their services, but again they can't identify you as you, as no data about you specifically is sent along.
+                                           </p>
+                                       </div>
+                                       </li>
+                                       <li>>_What third-party machine learning API services are integrated?<div class="info not-visible">
+                                           <p>
+                                            Kairos facial recognition API. <a href="https://www.kairos.com/docs/api/">view</a><br><br>
+                                            Restdb for storing data. <a href="https://restdb.io/">view</a><br>
+                                           </p>
+                                       </div>
+                                       </li>
+                                       <li>>_What will the third-party API Services do with my data?<div class="info not-visible">
+                                           <p>
+                                           Kiros: Your data will be used to improve data models and to make better future predictions <a href="https://www.kairos.com/faq#security-privacy">view terms & conditions</a>
+                                           RestDB: Your data will be used to store in database only for experimental propose only and not be shared <a href="https://restdb.io/terms/">view terms & conditions</a>
+                                           </p>
+                                       </div>
+                                       </li>
+                                       <li>>_What will the third-party API Services do with my data?<div class="info not-visible">
+                                           <p>
+                                               It is common for them to use anonymized data to improve their models to make better predictions in the future.
+                                           </p>
+                                       </div>
+                                       </li>
+                                       <li>>_What permissions does the application require?<div class="info not-visible">
+                                           <p>
+                                            The only permissions the application needs are camera accesses.
+                                           </p>
+                                       </div>
+                                       </li>
                                    </ul>
 
                                 </div>
@@ -130,6 +172,23 @@
 <script async src="js/app.js"></script>
 
 <!--<script async src="js/dataset.js"></script>-->
+
+<script>
+    let listItem = document.querySelectorAll('.content li');
+
+    for(let i=0; i < listItem.length;i++){
+
+      listItem[i].addEventListener('click',expander)
+    }
+
+    function expander() {
+      for(let i=0; i < listItem.length;i++) {
+        listItem[i].getElementsByClassName("info")[0].classList.add('not-visible');
+      }
+      this.getElementsByClassName("info")[0].classList.remove('not-visible');
+    }
+
+</script>
 
 
 </html>
