@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4143c520-5cdc-4999-897c-293fc5478382" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_about.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/pages/_faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/pages/_faq.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,15 +25,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/aanhoudingen/MMA_verdachten_aanhoudingen.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="117" column="28" lean-forward="true" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/about.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
@@ -107,8 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/analyzer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="951">
+            <state relative-caret-position="-401">
               <caret line="222" column="25" lean-forward="true" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/chart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="210" column="148" selection-start-line="210" selection-start-column="148" selection-end-line="210" selection-end-column="148" />
             </state>
           </provider>
         </entry>
@@ -151,10 +146,10 @@
       <find>video</find>
       <find>data_uri</find>
       <find>disabled</find>
-      <find>view data</find>
       <find>active</find>
       <find>h1</find>
       <find>class=&quot;info&quot;</find>
+      <find>view data</find>
     </findStrings>
     <replaceStrings>
       <replace>Totaal verdachten&quot;</replace>
@@ -242,7 +237,6 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/scss/globals/_footer.scss" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/chart.js" />
         <option value="$PROJECT_DIR$/js/camera.js" />
         <option value="$PROJECT_DIR$/scss/globals/_header.scss" />
         <option value="$PROJECT_DIR$/js/cameraAvailablity.js" />
@@ -255,6 +249,7 @@
         <option value="$PROJECT_DIR$/views/faq.html" />
         <option value="$PROJECT_DIR$/scss/pages/_about.scss" />
         <option value="$PROJECT_DIR$/views/about.html" />
+        <option value="$PROJECT_DIR$/js/chart.js" />
       </list>
     </option>
   </component>
@@ -290,6 +285,11 @@
               <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="aanhoudingen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Riskprofile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Riskprofile" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Riskprofile" type="b2602c69:ProjectViewProjectNode" />
@@ -382,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306626000" />
+    <option name="totallyTimeSpent" value="307126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="875" extended-state="6" />
@@ -545,13 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/webcam.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
@@ -677,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/analyzer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="951">
-          <caret line="222" column="25" lean-forward="true" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/aanhoudingen/MMA_verdachten_aanhoudingen.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -750,6 +736,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/analyzer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="222" column="25" lean-forward="true" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="210" column="148" selection-start-line="210" selection-start-column="148" selection-end-line="210" selection-end-column="148" />
         </state>
       </provider>
     </entry>
