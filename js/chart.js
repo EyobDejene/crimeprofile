@@ -39,6 +39,7 @@ var myChart = new Chart(ctx, {
   },
 
   options: {
+
     onClick: handleClick,
 
     plugins: {
@@ -188,27 +189,27 @@ function handleClick(e) {
     let selectedBar  = labelX[bar].label;
     console.log();
     if(selectedBar == 'property crimes'){
-      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van vermogensmisdrijven. Onder vermogensmisdrijven vallen alle vormen van diefstal en inbraak. Daarnaast vallen verduistering, bedrog, valsheidsmisdrijven, afpersing, bankbreuk en witwassen in deze categorie misdrijven. Hieronder vallen alle vormen van diefstal en inbraak. Daarnaast vallen verduistering, bedrog, valsheidsmisdrijven, afpersing, bankbreuk en witwassen in deze categorie misdrijven.<br><br>' +
-          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      let msg = selectedBar+'<br><br>All registered property crime suspects. Property crimes include all forms of theft and burglary. In addition, embezzlement, fraud, forgery, extortion, bankruptcy and money laundering fall into this category of crimes. This includes all forms of theft and burglary. In addition, embezzlement, fraud, forgery, extortion, bankruptcy and money laundering fall into this category of crimes.<br><br>' +
+          'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH)<br> between 2005 - 2014.';
       notify(msg,true);
 
     }else if(selectedBar == 'public-order crimes'){
-      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van vernieling en openbare orde misdrijven. Hieronder vallen brandstichting, alle vormen van vernieling en misdrijven tegen de openbare orde en het openbaar gezag. Voorbeelden van misdrijven tegen de openbare orde en tegen het openbaar gezag zijn opruiing, huis-, computer- en lokaalvredebreuk, deelneming aan een criminele of terroristische organisatie, openlijke geweldpleging, godslastering, discriminatie en het doen van een valse aangifte. <br><br>' +
-        'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      let msg = selectedBar+'<br><br>All registered suspects of vandalism and public order crimes. This includes arson, all forms of vandalism and crimes against public order and public authority. Examples of crimes against public order and against public authority are sedition, burglary of the home, computer and premises, participation in a criminal or terrorist organization, open assault, blasphemy, discrimination and making a false report.<br><br>' +
+          'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH) <br>between 2005 - 2014.';
       notify(msg,true);
     }else if(selectedBar == 'violent crimes'){
-      let msg = selectedBar+'<br><br>Alle verdachten van geweldsmisdrijven. Onder geweldsmisdrijven vallen alle seksuele misdrijven, waaronder verkrachting, aanranding en ontucht. Daarnaast gaat het om levensdelicten, zoals moord en doodslag, hulp bij zelfdoding, euthanasie en abortus. Ook dood en lichamelijk letsel door schuld, bedreiging, mishandeling, diefstal met geweld en afpersing horen bij deze categorie.<br><br>' +
-          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      let msg = selectedBar+'<br><br>All suspects of violent crimes. Violent crimes include all sexual crimes, including rape, assault and fornication. It also concerns life crimes, such as murder and manslaughter, assisted suicide, euthanasia and abortion. This category also includes culpable death and physical injury, threats, assault, theft with violence and extortion.<br><br>' +
+          'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH)<br> between 2005 - 2014.';
       notify(msg,true);
     }else if(selectedBar == 'traffic offenses'){
-      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van verkeersmisdrijven.<br><br>' +
-          'De Wegenverkeerswet 1994 is de basis voor de regelgeving van het wegverkeer in Nederland. In deze wet staat beschreven wat verkeersdelicten (misdrijf of overtreding) zijn. De in deze tabel gepresenteerde cijfers hebben uitsluitend betrekking op misdrijven. De meest voorkomende verkeersmisdrijven zijn rijden onder invloed en verlaten plaats ongeval.<br><br>'+
-          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie.';
+      let msg = selectedBar+'<br><br>All registered traffic crime suspects.<br><br>' +
+          'The 1994 Road Traffic Act is the basis for road traffic regulations in the Netherlands. This law describes what traffic offenses (crime or violation) are. The figures presented in this table relate exclusively to crimes. The most common traffic offenses are drunk driving and accident abandonment.<br><br>'+
+          'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH) <br> between 2005 - 2014.';
       notify(msg,true);
     }else if(selectedBar == 'drug offenses'){
-      let msg = selectedBar+'<br><br>Alle geregistreerde verdachten van drugsmisdrijven.<br><br>' +
-          'De Opiumwet regelt de opsporing, vervolging en berechting van handelingen die te maken hebben met (verboden) drugsbezit en drugshandel. De wet maakt onderscheid tussen misdrijven en overtredingen. Op grond van de Opiumwet geldt een verbod op het bereiden, bewerken, verwerken, verkopen, afleveren, verstrekken, vervoeren of aanwezig hebben van middelen die genoemd worden op de zogeheten lijst I (harddrugs) en lijst II (softdrugs). Voorbeelden van de hier bedoelde stoffen zijn cocaïne, heroïne, methadon, morfine, opium en hennep. De in deze tabel gepresenteerde cijfers hebben uitsluitend betrekking op misdrijven.<br><br>'+
-          'Het betreft de verdachte personen die geregistreerd zijn in het registratiesysteem Basis Voorziening Handhaving (BVH) van de politie. ';
+      let msg = selectedBar+'<br><br>All registered drug suspects.<br><br>' +
+          'The Opium Act regulates the investigation, prosecution and trial of acts related to (prohibited) drug possession and drug trafficking. The law distinguishes between crimes and violations. Under the Opium Act, it is prohibited to prepare, process, process, sell, deliver, provide, transport or have available substances that are mentioned on the so-called list I (hard drugs) and list II (soft drugs). Examples of the substances referred to here are cocaine, heroin, methadone, morphine, opium and hemp. The figures presented in this table relate exclusively to crimes.<br><br>'+
+          'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH)<br> between 2005 - 2014.';
       notify(msg,true);
 
     }
