@@ -208,7 +208,7 @@ function handleClick(e) {
       notify(msg,true);
     }else if(selectedBar == 'drug offenses'){
       let msg = selectedBar+'<br><br>All registered drug suspects.<br><br>' +
-          'The Opium Act regulates the investigation, prosecution and trial of acts related to (prohibited) drug possession and drug trafficking. The law distinguishes between crimes and violations. Under the Opium Act, it is prohibited to prepare, process, process, sell, deliver, provide, transport or have available substances that are mentioned on the so-called list I (hard drugs) and list II (soft drugs). Examples of the substances referred to here are cocaine, heroin, methadone, morphine, opium and hemp. The figures presented in this table relate exclusively to crimes.<br><br>'+
+          'The Opium law regulates the investigation, prosecution and trial of acts related to (prohibited) drug possession and drug trafficking. The law distinguishes between crimes and violations. Under the Opium law, it is prohibited to prepare, process, process, sell, deliver, provide, transport or have available substances that are mentioned on the so-called list I (hard drugs) and list II (soft drugs). Examples of the substances referred to here are cocaine, heroin, methadone, morphine, opium and hemp. The figures presented in this table relate exclusively to crimes.<br><br>'+
           'It concerns the suspicious persons who are registered in the registration system Basis Voorziening Handhaving (BVH)<br> between 2005 - 2014.';
       notify(msg,true);
 
